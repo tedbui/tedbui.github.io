@@ -7,7 +7,6 @@ import {
   ProjectsIcon,
   ProjectsH2,
   ProjectsH1,
-  ProjectsP,
   PopupContainer,
   PopupCard,
   PopupTitle,
@@ -36,7 +35,6 @@ const Projects = () => {
       image: cebonPerfumeIcon,
       title: "C'ebon Perfume",
       date: "May 2020",
-      description: "C'ebon Perfume",
       fullDescription: `C'ebon Perfume began as a passion project, 
       with my bedroom serving as the first "warehouse" for all my fragrance bottles!
       What started as a small collection quickly turned into an opportunity to share my love for perfume with others. 
@@ -48,7 +46,6 @@ const Projects = () => {
       image: hanoiMidAutumn,
       title: "A Hanoi Mid-Autumn Story",
       date: "Jun 2022",
-      description: "Photography Project",
       fullDescription: `I'm pleased to share that one of my photography projects, 
       which documents the Mid-Autumn Festival in Hanoi, 
       has garnered significant attention, achieving 6,500 likes on Facebook.
@@ -57,9 +54,8 @@ const Projects = () => {
     },
     {
       image: muongLatIcon,
-      title: " Muong Lat",
+      title: "Muong Lat",
       date: "May 2022",
-      description: "School Rebuilding",
       fullDescription: `This experience was incredibly humbling. 
       I had the privilege of guiding 20 university students as we rebuilt Pha Den Primary School in Muong Lat, Vietnam.
       Thanks to the support of 50+ donors, we were able to create a brighter future for these amazing kids.`,
@@ -87,7 +83,6 @@ const Projects = () => {
           <ProjectsCard key={index} onClick={() => openPopup(index)}>
             <ProjectsIcon src={project.image} />
             <ProjectsH2>{project.title}</ProjectsH2>
-            <ProjectsP>{project.description}</ProjectsP>
           </ProjectsCard>
         ))}
       </ProjectsWrapper>

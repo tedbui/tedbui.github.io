@@ -101,19 +101,6 @@ const Navbar = ({ toggle }) => {
             <NavItem>
               <NavLinks
                 scrollNav={scrollNav}
-                to="experiences"
-                smooth={true}
-                duration={500}
-                spy={true}
-                exact="true"
-                offset={-80}
-              >
-                Experiences
-              </NavLinks>
-            </NavItem>
-            <NavItem>
-              <NavLinks
-                scrollNav={scrollNav}
                 to="photography"
                 smooth={true}
                 duration={500}

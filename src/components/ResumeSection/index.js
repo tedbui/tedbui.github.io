@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { ExperiencePopup } from "./ExperiencePopup";
 import {
   ResumeContainer,
   ResumeHeader,
@@ -31,6 +32,15 @@ const ResumeSection = ({ toggle }) => {
 
   const educationOn = () => setShowEducation(true);
   const workOn = () => setShowEducation(false);
+  const [popupContent, setPopupContent] = useState(null);
+
+  const openPopup = (content) => {
+    setPopupContent(content);
+  };
+
+  const closePopup = () => {
+    setPopupContent(null);
+  };
 
   return (
     <>
@@ -40,7 +50,7 @@ const ResumeSection = ({ toggle }) => {
             <ResumeH1>My Journey</ResumeH1>
             <ResumeMenu>
               <ResumeItem onClick={educationOn}>Education</ResumeItem>
-              {/* <ResumeItem onClick={workOn}>Experience</ResumeItem> */}
+              <ResumeItem onClick={workOn}>Experience</ResumeItem>
             </ResumeMenu>
           </ResumeHeader>
 
@@ -90,7 +100,7 @@ const ResumeSection = ({ toggle }) => {
               </EducationContainer>
             )}
 
-            {/* {!showEducation && ( // Show Experience start from here
+            {!showEducation && ( // Show Experience start from here
               <WorkContainer>
                 <VerticalTimeline lineColor="#F6AE2D">
                   <VerticalTimelineElement
@@ -98,7 +108,8 @@ const ResumeSection = ({ toggle }) => {
                     iconStyle={{ background: "#F6AE2D", color: "white" }}
                     icon={<MdWork />}
                   >
-                    <ElementHeaderWrapper>
+                    {/* Do nothing when open the popup, if in the future need to add more content, just add more ElementListItem and do something like the other elements below */}
+                    <ElementHeaderWrapper onClick={() => openPopup(null)}>
                       <ElementTitle className="vertical-timeline-element-title">
                         <Link href="https://vinaherbfoods.com/" target="_blank">
                           Supply Chain Intern
@@ -116,7 +127,36 @@ const ResumeSection = ({ toggle }) => {
                     iconStyle={{ background: "#F6AE2D", color: "white" }}
                     icon={<MdWork />}
                   >
-                    <ElementHeaderWrapper>
+                    <ElementHeaderWrapper
+                      onClick={() =>
+                        openPopup(
+                          <ElementList>
+                            <ElementListItem>
+                              Created $2,000 in yearly cost savings by
+                              communicating and maintaining relationships with
+                              more than 3 material and garment suppliers
+                              overseas to ensure timely delivery.
+                            </ElementListItem>
+                            <ElementListItem>
+                              Maintained up to 90% quality standards by
+                              carefully assessing pre-production samples for
+                              color precision and fabric length adherence,
+                              resulting in a 20% reduction in time spent
+                              addressing quality-related problems.
+                            </ElementListItem>
+                            <ElementListItem>
+                              Managed and coordinated large-scale orders of up
+                              to 5,000 units monthly using Excel
+                            </ElementListItem>
+                            <ElementSkills>
+                              <ElementSkillsLogo
+                                src={require("../../images/experience/assistantProductionCoordinator1.avif")}
+                              />
+                            </ElementSkills>
+                          </ElementList>
+                        )
+                      }
+                    >
                       <ElementTitle className="vertical-timeline-element-title">
                         <Link href="https://ekline.io/" target="_blank">
                           Assistant Production Coordinator
@@ -126,40 +166,35 @@ const ResumeSection = ({ toggle }) => {
                         Hanoi, Vietnam
                       </ElementSubtitle>
                     </ElementHeaderWrapper>
-
-                    <ElementP>
-                      <ElementList>
-                        <ElementListItem>
-                          Created $2,000 in yearly cost savings by communicating
-                          and maintaining relationships with more than 3
-                          material and garment suppliers overseas to ensure
-                          timely delivery.
-                        </ElementListItem>
-                        <ElementListItem>
-                          Maintained up to 90% quality standards by carefully
-                          assessing pre-production samples for color precision
-                          and fabric length adherence, resulting in a 20%
-                          reduction in time spent addressing quality-related
-                          problems.
-                        </ElementListItem>
-                        <ElementListItem>
-                          Managed and coordinated large-scale orders of up to
-                          5,000 units monthly using Excel
-                        </ElementListItem>
-                        <ElementSkills>
-                          <ElementSkillsLogo
-                            src={require("../../images/experience/assistantProductionCoordinator1.avif")}
-                          />
-                        </ElementSkills>
-                      </ElementList>
-                    </ElementP>
                   </VerticalTimelineElement>
                   <VerticalTimelineElement
                     date="Aug 2023 - Mar 2024"
                     iconStyle={{ background: "#F6AE2D", color: "white" }}
                     icon={<MdWork />}
                   >
-                    <ElementHeaderWrapper>
+                    <ElementHeaderWrapper
+                      onClick={() =>
+                        openPopup(
+                          <ElementList>
+                            <ElementListItem>
+                              Efficiently managed high-volume customer traffic,
+                              processing 100+ orders daily while maintaining a
+                              friendly and professional demeanor.
+                            </ElementListItem>
+                            <ElementListItem>
+                              Reduced customer wait times by 20% by proactively
+                              recommending popular menu items and streamlining
+                              the ordering process.
+                            </ElementListItem>
+                            <ElementListItem>
+                              Increased daily revenue by 10% through effective
+                              upselling techniques, suggesting complementary
+                              items, and promoting special offers.
+                            </ElementListItem>
+                          </ElementList>
+                        )
+                      }
+                    >
                       <ElementTitle className="vertical-timeline-element-title">
                         <Link href="https://www.washington.edu" target="_blank">
                           Student Assistant
@@ -169,145 +204,142 @@ const ResumeSection = ({ toggle }) => {
                         Seattle, Washington
                       </ElementSubtitle>
                     </ElementHeaderWrapper>
-
-                    <ElementP>
-                      <ElementList>
-                        <ElementListItem>
-                          Efficiently managed high-volume customer traffic,
-                          processing 100+ orders daily while maintaining a
-                          friendly and professional demeanor.
-                        </ElementListItem>
-                        <ElementListItem>
-                          Reduced customer wait times by 20% by proactively
-                          recommending popular menu items and streamlining the
-                          ordering process.
-                        </ElementListItem>
-                        <ElementListItem>
-                          Increased daily revenue by 10% through effective
-                          upselling techniques, suggesting complementary items,
-                          and promoting special offers.
-                        </ElementListItem>
-                      </ElementList>
-                    </ElementP>
                   </VerticalTimelineElement>
-
                   <VerticalTimelineElement
                     date="May 2022 - Jun 2023"
                     iconStyle={{ background: "#F6AE2D", color: "white" }}
                     icon={<MdWork />}
                   >
-                    <ElementTitle className="vertical-timeline-element-title">
-                      <Link href="https://vietclay.com/" target="_blank">
-                        Vietclay
-                      </Link>
-                    </ElementTitle>
-                    <ElementSubtitle className="vertical-timeline-element-subtitle">
-                      Hanoi, Vietnam
-                    </ElementSubtitle>
-                    <ElementP>
-                      <ElementList>
-                        <ElementSubtitle className="vertical-timeline-element-subtitle">
-                          Commercial Photographer
-                        </ElementSubtitle>
-                        <ElementListItem>
-                          Increased revenue by 50% during peak seasons by
-                          developing and executing innovative product
-                          presentation strategies across various marketing
-                          channels (e.g., social media, website, brochures).
-                        </ElementListItem>
-                        <ElementListItem>
-                          Streamlined the image processing workflow by editing,
-                          organizing, resizing, cleaning surfaces, removing
-                          imperfections, and correcting color, ensuring
-                          high-quality final products.
-                        </ElementListItem>
-                        <ElementListItem>
-                          Improved task efficiency by 30% by collaborating with
-                          the marketing team to ensure brand consistency and
-                          visual appeal across all marketing materials
-                        </ElementListItem>
-                        <ElementSkills>
-                          <ElementSkillsLogo
-                            src={require("../../images/experience/commercialPhotographer1.png")}
-                          />
-                          <ElementSkillsLogo
-                            src={require("../../images/experience/commercialPhotographer2.jpg")}
-                          />
-                          <ElementSkillsLogo
-                            src={require("../../images/experience/commercialPhotographer3.png")}
-                          />
-                          <ElementSkillsLogo
-                            src={require("../../images/experience/commercialPhotographer4.png")}
-                          />
-                          <ElementSkillsLogo
-                            src={require("../../images/experience/commercialPhotographer5.png")}
-                          />
-                        </ElementSkills>
-                      </ElementList>
-                    </ElementP>
+                    <ElementHeaderWrapper
+                      onClick={() =>
+                        openPopup(
+                          <ElementList>
+                            <ElementSubtitle className="vertical-timeline-element-subtitle">
+                              Commercial Photographer
+                            </ElementSubtitle>
+                            <ElementListItem>
+                              Increased revenue by 50% during peak seasons by
+                              developing and executing innovative product
+                              presentation strategies across various marketing
+                              channels (e.g., social media, website, brochures).
+                            </ElementListItem>
+                            <ElementListItem>
+                              Streamlined the image processing workflow by
+                              editing, organizing, resizing, cleaning surfaces,
+                              removing imperfections, and correcting color,
+                              ensuring high-quality final products.
+                            </ElementListItem>
+                            <ElementListItem>
+                              Improved task efficiency by 30% by collaborating
+                              with the marketing team to ensure brand
+                              consistency and visual appeal across all marketing
+                              materials
+                            </ElementListItem>
+                            <ElementSkills>
+                              <ElementSkillsLogo
+                                src={require("../../images/experience/commercialPhotographer1.png")}
+                              />
+                              <ElementSkillsLogo
+                                src={require("../../images/experience/commercialPhotographer2.jpg")}
+                              />
+                              <ElementSkillsLogo
+                                src={require("../../images/experience/commercialPhotographer3.png")}
+                              />
+                              <ElementSkillsLogo
+                                src={require("../../images/experience/commercialPhotographer4.png")}
+                              />
+                              <ElementSkillsLogo
+                                src={require("../../images/experience/commercialPhotographer5.png")}
+                              />
+                            </ElementSkills>
+                          </ElementList>
+                        )
+                      }
+                    >
+                      <ElementTitle className="vertical-timeline-element-title">
+                        <Link href="https://vietclay.com/" target="_blank">
+                          Vietclay
+                        </Link>
+                      </ElementTitle>
+                      <ElementSubtitle className="vertical-timeline-element-subtitle">
+                        Hanoi, Vietnam
+                      </ElementSubtitle>
+                    </ElementHeaderWrapper>
                   </VerticalTimelineElement>
-
                   <VerticalTimelineElement
                     date="Feb 2023 - Apr 2023"
                     iconStyle={{ background: "#F6AE2D", color: "white" }}
                     icon={<MdWork />}
                   >
-                    <ElementTitle className="vertical-timeline-element-title">
-                      <Link href="http://bpi.vn/" target="_blank">
-                        Supply Chain Management
-                      </Link>
-                    </ElementTitle>
-                    <ElementSubtitle className="vertical-timeline-element-subtitle">
-                      Hanoi, Vietnam
-                    </ElementSubtitle>
-                    <ElementP>
-                      <ElementList>
-                        <ElementListItem>
-                          Improved documentation management efficiency by 30% by
-                          collaborating with internal teams to integrate
-                          fumigation-related documentation
-                        </ElementListItem>
-                        <ElementListItem>
-                          Achieved smooth customs clearance for over 20
-                          shipments per month by ensuring compliance with
-                          international trade regulations and a 100% match
-                          between invoices and packing lists.
-                        </ElementListItem>
-                        <ElementSkills>
-                          <ElementSkillsLogo
-                            src={require("../../images/experience/supplyChainManagement.png")}
-                          />
-                        </ElementSkills>
-                      </ElementList>
-                    </ElementP>
+                    <ElementHeaderWrapper
+                      onClick={() =>
+                        openPopup(
+                          <ElementList>
+                            <ElementListItem>
+                              Improved documentation management efficiency by
+                              30% by collaborating with internal teams to
+                              integrate fumigation-related documentation
+                            </ElementListItem>
+                            <ElementListItem>
+                              Achieved smooth customs clearance for over 20
+                              shipments per month by ensuring compliance with
+                              international trade regulations and a 100% match
+                              between invoices and packing lists.
+                            </ElementListItem>
+                            <ElementSkills>
+                              <ElementSkillsLogo
+                                src={require("../../images/experience/supplyChainManagement.png")}
+                              />
+                            </ElementSkills>
+                          </ElementList>
+                        )
+                      }
+                    >
+                      <ElementTitle className="vertical-timeline-element-title">
+                        <Link href="http://bpi.vn/" target="_blank">
+                          Supply Chain Management
+                        </Link>
+                      </ElementTitle>
+                      <ElementSubtitle className="vertical-timeline-element-subtitle">
+                        Hanoi, Vietnam
+                      </ElementSubtitle>
+                    </ElementHeaderWrapper>
                   </VerticalTimelineElement>
-
-                  <VerticalTimelineElement
+                  {/* Just comment ulsa experience */}
+                  {/* <VerticalTimelineElement
                     date="Sep 2022 - Apr 2023"
                     iconStyle={{ background: "#F6AE2D", color: "white" }}
                     icon={<MdWork />}
                   >
-                    <ElementTitle className="vertical-timeline-element-title">
-                      <Link href="http://www.ulsa.edu.vn/" target="_blank">
-                        Research Fellowship
-                      </Link>
-                    </ElementTitle>
-                    <ElementSubtitle className="vertical-timeline-element-subtitle">
-                      Hanoi, Vietnam
-                    </ElementSubtitle>
-                    <ElementP>
-                      <ElementList>
-                        <ElementSkills>
-                          <ElementSkillsLogo
-                            src={require("../../images/experience/ulsa.jfif")}
-                          />
-                        </ElementSkills>
-                      </ElementList>
-                    </ElementP>
-                  </VerticalTimelineElement>
+                    <ElementHeaderWrapper
+                      onClick={() =>
+                        openPopup(
+                          <ElementList>
+                            <ElementSkills>
+                              <ElementSkillsLogo
+                                src={require("../../images/experience/ulsa.jfif")}
+                              />
+                            </ElementSkills>
+                          </ElementList>
+                        )
+                      }
+                    >
+                      <ElementTitle className="vertical-timeline-element-title">
+                        <Link href="http://www.ulsa.edu.vn/" target="_blank">
+                          Research Fellowship
+                        </Link>
+                      </ElementTitle>
+                      <ElementSubtitle className="vertical-timeline-element-subtitle">
+                        Hanoi, Vietnam
+                      </ElementSubtitle>
+                    </ElementHeaderWrapper>
+                  </VerticalTimelineElement> */}
                 </VerticalTimeline>
               </WorkContainer>
-            )} */}
+            )}
+            {popupContent && (
+              <ExperiencePopup content={popupContent} onClose={closePopup} />
+            )}
           </ResumeContent>
         </ResumeWrapper>
       </ResumeContainer>

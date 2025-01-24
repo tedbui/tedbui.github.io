@@ -176,7 +176,7 @@ const Certificates = () => {
     {
       title: "Foster R for Business",
       organization: "UW Foster School of Business",
-      date: "Issued Oct 2024 - Expires Oct 2030",
+      // date: "Issued Oct 2024 - Expires Oct 2030",
       logo: fosterLogo,
       link: "",
       skills: ["R", "Business Analytics"],
@@ -200,7 +200,7 @@ const Certificates = () => {
       organization: "Google",
       logo: googleLogo,
       link: "",
-      skills: ["RStudio", "Tableau", "Data Analytics"],
+      skills: ["Data Analytics", "RStudio", "Tableau"],
     },
     {
       title: "Microsoft Power BI Data Analyst Professional Certificate",

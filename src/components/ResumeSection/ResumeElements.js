@@ -55,7 +55,7 @@ export const ResumeMenu = styled.div`
   //   border: solid 1px red;
 
   @media screen and (max-width: 480px) {
-    gap: 15px
+    gap: 15px;
   }
 `;
 
@@ -130,9 +130,15 @@ export const ElementSkillsLogo = styled.img`
 `;
 
 export const ElementHeaderWrapper = styled.div`
-  display: flex:
+  display: flex;
   justify-content: space-between;
   flex-direction: row;
+  cursor: pointer; // Add cursor to indicate clickability
+
+  &:hover {
+    opacity: 0.8; // Optional: add hover effect
+    transition: opacity 0.2s ease-in-out;
+  }
 `;
 
 export const ElementTitle = styled.h3`
