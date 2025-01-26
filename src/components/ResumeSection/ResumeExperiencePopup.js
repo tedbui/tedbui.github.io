@@ -97,7 +97,7 @@ const PopupDescription = styled.div`
 const PopupImagePreview = styled.img`
   width: 55%;
   height: auto;
-  max-height: 90%;
+  max-height: 80%;
   margin-left: 25px;
 
   @media screen and (max-width: 768px) {

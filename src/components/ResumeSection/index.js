@@ -110,11 +110,13 @@ const ResumeSection = ({ toggle }) => {
                     <ElementSubtitle className="vertical-timeline-element-subtitle">
                       Seattle, Washington
                     </ElementSubtitle>
-                    <ElementP>Grade: 3.8/4.0</ElementP>
-                    <ElementP>
+                    <ResumeExperienceSubtitle>
+                      Grade: 3.8/4.0
+                    </ResumeExperienceSubtitle>
+                    <ResumeExperienceSubtitle>
                       Master's degree, Logistics, Materials and Supply Chain
                       Management
-                    </ElementP>
+                    </ResumeExperienceSubtitle>
                   </VerticalTimelineElement>
 
                   <VerticalTimelineElement
@@ -130,10 +132,10 @@ const ResumeSection = ({ toggle }) => {
                     <ElementSubtitle className="vertical-timeline-element-subtitle">
                       University Ave, Troy
                     </ElementSubtitle>
-                    <ElementP>
+                    <ResumeExperienceSubtitle>
                       Bachelor of Business Administration - BBA, Business {"\n"}
                       Administration and Management, General
-                    </ElementP>
+                    </ResumeExperienceSubtitle>
                   </VerticalTimelineElement>
                 </VerticalTimeline>
               </EducationContainer>
@@ -285,7 +287,7 @@ const ResumeSection = ({ toggle }) => {
                     ></ElementHeaderWrapper>
                     <ElementTitle className="vertical-timeline-element-title">
                       <Link href="https://vietclay.com/" target="_blank">
-                        Vietclay
+                        Commercial Photographer
                       </Link>
                     </ElementTitle>
                     <ResumeExperienceSubtitle className="vertical-timeline-element-subtitle">
@@ -293,7 +295,7 @@ const ResumeSection = ({ toggle }) => {
                       {calculateMonthsWorked("May 2022", "Jun 2023")} months
                     </ResumeExperienceSubtitle>
                     <ResumeExperienceSubtitle className="vertical-timeline-element-subtitle">
-                      Commercial Photographer
+                      Vietclay
                     </ResumeExperienceSubtitle>
                     <ResumeExperienceSubtitle className="vertical-timeline-element-subtitle">
                       Hanoi, Vietnam
