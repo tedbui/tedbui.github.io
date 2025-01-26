@@ -49,19 +49,6 @@ const Navbar = ({ toggle }) => {
             <NavItem>
               <NavLinks
                 scrollNav={scrollNav}
-                to="home"
-                smooth={true}
-                duration={500}
-                spy={true}
-                exact="true"
-                offset={-80}
-              >
-                Home
-              </NavLinks>
-            </NavItem>
-            <NavItem>
-              <NavLinks
-                scrollNav={scrollNav}
                 to="about"
                 smooth={true}
                 duration={500}
@@ -99,16 +86,34 @@ const Navbar = ({ toggle }) => {
               </NavLinks>
             </NavItem>
             <NavItem>
+              <a
+                href="https://www.flickr.com/photos/198630723@N02/albums/"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  color: scrollNav ? "black" : "white",
+                  display: "flex",
+                  alignItems: "center",
+                  textDecoration: "none",
+                  padding: "0 1rem",
+                  height: "100%",
+                  cursor: "pointer",
+                }}
+              >
+                Photography
+              </a>
+            </NavItem>
+            <NavItem>
               <NavLinks
                 scrollNav={scrollNav}
-                to="photography"
+                to="certificates"
                 smooth={true}
                 duration={500}
                 spy={true}
                 exact="true"
                 offset={-80}
               >
-                Photography
+                Certificates
               </NavLinks>
             </NavItem>
             <NavItem>

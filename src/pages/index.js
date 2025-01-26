@@ -7,7 +7,6 @@ import ProjectsCard from "../components/ProjectsCard";
 import ContactSection from "../components/ContactSection";
 import Footer from "../components/Footer";
 import { about } from "../components/InfoSection/Data";
-import Photography from "../components/Photography";
 import Extracurricular from "../components/Extracurricular";
 import Certificates from "../components/Certificates";
 
@@ -23,10 +22,9 @@ const Home = () => {
       <Sidebar isOpen={isOpen} toggle={toggle} />
       <Navbar toggle={toggle} />
       <InfoSection {...about} />
-      <ProjectsCard />
       <ResumeSection />
+      <ProjectsCard />
       <Certificates />
-      <Photography />
       <Extracurricular />
       <ContactSection />
       <Footer />

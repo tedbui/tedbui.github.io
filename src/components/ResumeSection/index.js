@@ -27,19 +27,25 @@ import {
   VerticalTimelineElement,
 } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
+
+import hanoiMidAutumn from "../../images/projects/hanoiMidAutumn.jpg";
+import cebonPerfume from "../../images/projects/cebonPerfume.png";
+
 const ResumeSection = ({ toggle }) => {
   const [showEducation, setShowEducation] = useState(true);
 
   const educationOn = () => setShowEducation(true);
   const workOn = () => setShowEducation(false);
   const [popupContent, setPopupContent] = useState(null);
-
-  const openPopup = (content) => {
+  const [popupImagePreview, setPopupImagePreview] = useState(null);
+  const openPopup = (content, imagePreview) => {
     setPopupContent(content);
+    setPopupImagePreview(imagePreview);
   };
 
   const closePopup = () => {
     setPopupContent(null);
+    setPopupImagePreview(null);
   };
 
   return (
@@ -153,7 +159,8 @@ const ResumeSection = ({ toggle }) => {
                                 src={require("../../images/experience/assistantProductionCoordinator1.avif")}
                               />
                             </ElementSkills>
-                          </ElementList>
+                          </ElementList>,
+                          hanoiMidAutumn
                         )
                       }
                     >
@@ -191,7 +198,8 @@ const ResumeSection = ({ toggle }) => {
                               upselling techniques, suggesting complementary
                               items, and promoting special offers.
                             </ElementListItem>
-                          </ElementList>
+                          </ElementList>,
+                          cebonPerfume
                         )
                       }
                     >
@@ -338,7 +346,11 @@ const ResumeSection = ({ toggle }) => {
               </WorkContainer>
             )}
             {popupContent && (
-              <ExperiencePopup content={popupContent} onClose={closePopup} />
+              <ExperiencePopup
+                content={popupContent}
+                onClose={closePopup}
+                imagePreview={popupImagePreview}
+              />
             )}
           </ResumeContent>
         </ResumeWrapper>
