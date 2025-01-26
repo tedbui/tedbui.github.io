@@ -20,7 +20,7 @@ export const CertificateContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(to bottom, #022b38, rgb(10, 90, 160));
+  background: white;
 
   @media screen and (max-width: 768px) {
     height: 1100px;
@@ -109,7 +109,7 @@ export const CertificateIcon = styled.img`
 
 export const CertificateH1 = styled.h1`
   font-size: 2.5rem;
-  color: white;
+  color: black;
   margin-bottom: 64px;
   padding-top: 50px;
 

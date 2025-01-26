@@ -161,3 +161,28 @@ export const Link = styled.a`
     transition: 0.2s ease-out;
   }
 `;
+
+export const ResumeExperienceSubtitle = styled.h5`
+  opacity: 40%;
+  margin-top: 5px;
+
+  @media screen and (max-width: 768px) {
+    font-size: 0.75rem;
+  }
+`;
+
+export const SeeMoreButton = styled.button`
+  background-color: #434343;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  font-size: 0.8rem;
+  cursor: pointer;
+  margin-left: 220px;
+
+  &:hover {
+    background-color: #434343;
+    transition: background-color 0.2s ease-in-out;
+  }
+`;

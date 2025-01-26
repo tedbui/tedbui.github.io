@@ -30,7 +30,9 @@ const Footer = () => {
         </FooterLinksContainer>
         <SocialMedia>
           <SocialMediaWrap>
-            <SocialLogo to="/">Thank you for your time</SocialLogo>
+            <SocialLogo to="/">
+              Thank you for making the time for this.
+            </SocialLogo>
             {/* <WebsiteRights>
               Matt © {new Date().getFullYear()}
             </WebsiteRights> */}

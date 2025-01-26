@@ -14,7 +14,7 @@ const gradient = keyframes`
 
 export const InfoContainer = styled.div`
   color: white;
-  background: linear-gradient(135deg, #01161e, #022938);
+  background: #434343;
   // background: linear-gradient(
   //   -45deg,
   //   #ff6962,

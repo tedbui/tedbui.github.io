@@ -38,7 +38,7 @@ const Navbar = ({ toggle }) => {
           <NavLogo to="/" onClick={toggleHome}>
             <LogoImg
               scrollNav={scrollNav}
-              src={require("../../images/TedBuiIcon.png")}
+              src={require("../../images/tedLogo.png")}
               alt="Logo"
             />
           </NavLogo>

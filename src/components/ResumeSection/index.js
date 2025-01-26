@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { ExperiencePopup } from "./ExperiencePopup";
+import { ResumeExperiencePopup } from "./ResumeExperiencePopup";
 import {
   ResumeContainer,
   ResumeHeader,
@@ -19,6 +19,8 @@ import {
   ElementSkillsLogo,
   ElementHeaderWrapper,
   Link,
+  ResumeExperienceSubtitle,
+  SeeMoreButton,
 } from "./ResumeElements";
 import { FaGraduationCap } from "react-icons/fa";
 import { MdWork } from "react-icons/md";
@@ -28,9 +30,25 @@ import {
 } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
 
-import hanoiMidAutumn from "../../images/projects/hanoiMidAutumn.jpg";
-import cebonPerfume from "../../images/projects/cebonPerfume.png";
+import ekline from "../../images/resume/ekline.png";
+import bpi from "../../images/resume/bpi.jpg";
+import vietlay from "../../images/resume/vietclay.jpg";
+import universityOfWashington from "../../images/resume/universityOfWashington.jpg";
+const calculateMonthsWorked = (startDate, endDate = "Present") => {
+  // Convert strings to Date objects
+  const start = new Date(startDate);
+  const end = endDate === "Present" ? new Date() : new Date(endDate);
 
+  // Validate input
+  if (start > end) {
+    return "Start date must be before end date.";
+  }
+
+  // Calculate months worked
+  const months = Math.ceil((end - start) / (1000 * 60 * 60 * 24 * 30.44));
+
+  return months;
+};
 const ResumeSection = ({ toggle }) => {
   const [showEducation, setShowEducation] = useState(true);
 
@@ -38,14 +56,29 @@ const ResumeSection = ({ toggle }) => {
   const workOn = () => setShowEducation(false);
   const [popupContent, setPopupContent] = useState(null);
   const [popupImagePreview, setPopupImagePreview] = useState(null);
-  const openPopup = (content, imagePreview) => {
+  const [companyLink, setCompanyLink] = useState(null);
+  const [companyName, setCompanyName] = useState(null);
+  const [position, setPosition] = useState(null);
+  const openPopup = (
+    content,
+    imagePreview,
+    companyLink,
+    companyName,
+    position
+  ) => {
     setPopupContent(content);
     setPopupImagePreview(imagePreview);
+    setCompanyLink(companyLink);
+    setCompanyName(companyName);
+    setPosition(position);
   };
 
   const closePopup = () => {
     setPopupContent(null);
     setPopupImagePreview(null);
+    setCompanyLink(null);
+    setCompanyName(null);
+    setPosition(null);
   };
 
   return (
@@ -105,7 +138,6 @@ const ResumeSection = ({ toggle }) => {
                 </VerticalTimeline>
               </EducationContainer>
             )}
-
             {!showEducation && ( // Show Experience start from here
               <WorkContainer>
                 <VerticalTimeline lineColor="#F6AE2D">
@@ -115,25 +147,47 @@ const ResumeSection = ({ toggle }) => {
                     icon={<MdWork />}
                   >
                     {/* Do nothing when open the popup, if in the future need to add more content, just add more ElementListItem and do something like the other elements below */}
-                    <ElementHeaderWrapper onClick={() => openPopup(null)}>
-                      <ElementTitle className="vertical-timeline-element-title">
-                        <Link href="https://vinaherbfoods.com/" target="_blank">
-                          Supply Chain Intern
-                        </Link>
-                      </ElementTitle>
-                      <ElementSubtitle className="vertical-timeline-element-subtitle">
-                        Hanoi, Vietnam
-                      </ElementSubtitle>
-                    </ElementHeaderWrapper>
-
-                    <ElementP></ElementP>
+                    <ElementHeaderWrapper
+                      onClick={() => openPopup(null)}
+                    ></ElementHeaderWrapper>
+                    <ElementTitle className="vertical-timeline-element-title">
+                      <Link href="https://vinaherbfoods.com/" target="_blank">
+                        Supply Chain Intern
+                      </Link>
+                    </ElementTitle>
+                    <ResumeExperienceSubtitle className="vertical-timeline-element-subtitle">
+                      Nov 2024 - Present · {calculateMonthsWorked("Nov 2024")}{" "}
+                      months
+                    </ResumeExperienceSubtitle>
+                    <ResumeExperienceSubtitle className="vertical-timeline-element-subtitle">
+                      Vinaherbfoods
+                    </ResumeExperienceSubtitle>
+                    <ResumeExperienceSubtitle className="vertical-timeline-element-subtitle">
+                      Hanoi, Vietnam
+                    </ResumeExperienceSubtitle>
                   </VerticalTimelineElement>
                   <VerticalTimelineElement
                     date="Aug 2023 - Mar 2024"
                     iconStyle={{ background: "#F6AE2D", color: "white" }}
                     icon={<MdWork />}
                   >
-                    <ElementHeaderWrapper
+                    <ElementHeaderWrapper></ElementHeaderWrapper>
+                    <ElementTitle className="vertical-timeline-element-title">
+                      <Link href="https://ekline.io/" target="_blank">
+                        Assistant Production Coordinator
+                      </Link>
+                    </ElementTitle>
+                    <ResumeExperienceSubtitle className="vertical-timeline-element-subtitle">
+                      Aug 2023 - Mar 2024 ·{" "}
+                      {calculateMonthsWorked("Aug 2023", "Mar 2024")} months
+                    </ResumeExperienceSubtitle>
+                    <ResumeExperienceSubtitle className="vertical-timeline-element-subtitle">
+                      Ekline
+                    </ResumeExperienceSubtitle>
+                    <ResumeExperienceSubtitle className="vertical-timeline-element-subtitle">
+                      Hanoi, Vietnam
+                    </ResumeExperienceSubtitle>
+                    <SeeMoreButton
                       onClick={() =>
                         openPopup(
                           <ElementList>
@@ -160,26 +214,38 @@ const ResumeSection = ({ toggle }) => {
                               />
                             </ElementSkills>
                           </ElementList>,
-                          hanoiMidAutumn
+                          ekline,
+                          "https://ekline.io/",
+                          "Ekline",
+                          "Assistant Production Coordinator"
                         )
                       }
                     >
-                      <ElementTitle className="vertical-timeline-element-title">
-                        <Link href="https://ekline.io/" target="_blank">
-                          Assistant Production Coordinator
-                        </Link>
-                      </ElementTitle>
-                      <ElementSubtitle className="vertical-timeline-element-subtitle">
-                        Hanoi, Vietnam
-                      </ElementSubtitle>
-                    </ElementHeaderWrapper>
+                      See more
+                    </SeeMoreButton>
                   </VerticalTimelineElement>
                   <VerticalTimelineElement
-                    date="Aug 2023 - Mar 2024"
+                    date="Aug 2024 - Present"
                     iconStyle={{ background: "#F6AE2D", color: "white" }}
                     icon={<MdWork />}
                   >
-                    <ElementHeaderWrapper
+                    <ElementHeaderWrapper></ElementHeaderWrapper>
+                    <ElementTitle className="vertical-timeline-element-title">
+                      <Link href="https://www.washington.edu" target="_blank">
+                        Barista/Inventory Manager
+                      </Link>
+                    </ElementTitle>
+                    <ResumeExperienceSubtitle className="vertical-timeline-element-subtitle">
+                      Aug 2024 - Present · {calculateMonthsWorked("Aug 2024")}{" "}
+                      months
+                    </ResumeExperienceSubtitle>
+                    <ResumeExperienceSubtitle className="vertical-timeline-element-subtitle">
+                      University of Washington
+                    </ResumeExperienceSubtitle>
+                    <ResumeExperienceSubtitle className="vertical-timeline-element-subtitle">
+                      Seattle, Washington, United States
+                    </ResumeExperienceSubtitle>
+                    <SeeMoreButton
                       onClick={() =>
                         openPopup(
                           <ElementList>
@@ -199,19 +265,15 @@ const ResumeSection = ({ toggle }) => {
                               items, and promoting special offers.
                             </ElementListItem>
                           </ElementList>,
-                          cebonPerfume
+                          universityOfWashington,
+                          "https://www.washington.edu",
+                          "University of Washington",
+                          "Barista/Inventory Manager - UW Food & Housing Services"
                         )
                       }
                     >
-                      <ElementTitle className="vertical-timeline-element-title">
-                        <Link href="https://www.washington.edu" target="_blank">
-                          Student Assistant
-                        </Link>
-                      </ElementTitle>
-                      <ElementSubtitle className="vertical-timeline-element-subtitle">
-                        Seattle, Washington
-                      </ElementSubtitle>
-                    </ElementHeaderWrapper>
+                      See more
+                    </SeeMoreButton>
                   </VerticalTimelineElement>
                   <VerticalTimelineElement
                     date="May 2022 - Jun 2023"
@@ -219,6 +281,24 @@ const ResumeSection = ({ toggle }) => {
                     icon={<MdWork />}
                   >
                     <ElementHeaderWrapper
+                      onClick={() => null}
+                    ></ElementHeaderWrapper>
+                    <ElementTitle className="vertical-timeline-element-title">
+                      <Link href="https://vietclay.com/" target="_blank">
+                        Vietclay
+                      </Link>
+                    </ElementTitle>
+                    <ResumeExperienceSubtitle className="vertical-timeline-element-subtitle">
+                      May 2022 - Jun 2023 ·{" "}
+                      {calculateMonthsWorked("May 2022", "Jun 2023")} months
+                    </ResumeExperienceSubtitle>
+                    <ResumeExperienceSubtitle className="vertical-timeline-element-subtitle">
+                      Commercial Photographer
+                    </ResumeExperienceSubtitle>
+                    <ResumeExperienceSubtitle className="vertical-timeline-element-subtitle">
+                      Hanoi, Vietnam
+                    </ResumeExperienceSubtitle>
+                    <SeeMoreButton
                       onClick={() =>
                         openPopup(
                           <ElementList>
@@ -260,26 +340,39 @@ const ResumeSection = ({ toggle }) => {
                                 src={require("../../images/experience/commercialPhotographer5.png")}
                               />
                             </ElementSkills>
-                          </ElementList>
+                          </ElementList>,
+                          vietlay,
+                          "https://vietclay.com/",
+                          "Vietclay",
+                          "Commercial Photographer"
                         )
                       }
                     >
-                      <ElementTitle className="vertical-timeline-element-title">
-                        <Link href="https://vietclay.com/" target="_blank">
-                          Vietclay
-                        </Link>
-                      </ElementTitle>
-                      <ElementSubtitle className="vertical-timeline-element-subtitle">
-                        Hanoi, Vietnam
-                      </ElementSubtitle>
-                    </ElementHeaderWrapper>
+                      See more
+                    </SeeMoreButton>
                   </VerticalTimelineElement>
                   <VerticalTimelineElement
                     date="Feb 2023 - Apr 2023"
                     iconStyle={{ background: "#F6AE2D", color: "white" }}
                     icon={<MdWork />}
                   >
-                    <ElementHeaderWrapper
+                    <ElementHeaderWrapper></ElementHeaderWrapper>
+                    <ElementTitle className="vertical-timeline-element-title">
+                      <Link href="http://bpi.vn/" target="_blank">
+                        Supply Chain Management
+                      </Link>
+                    </ElementTitle>
+                    <ResumeExperienceSubtitle className="vertical-timeline-element-subtitle">
+                      Feb 2023 - Apr 2023 ·{" "}
+                      {calculateMonthsWorked("Feb 2023", "Apr 2023")} months
+                    </ResumeExperienceSubtitle>
+                    <ResumeExperienceSubtitle className="vertical-timeline-element-subtitle">
+                      Bpi
+                    </ResumeExperienceSubtitle>
+                    <ResumeExperienceSubtitle className="vertical-timeline-element-subtitle">
+                      Hanoi, Vietnam
+                    </ResumeExperienceSubtitle>
+                    <SeeMoreButton
                       onClick={() =>
                         openPopup(
                           <ElementList>
@@ -299,19 +392,16 @@ const ResumeSection = ({ toggle }) => {
                                 src={require("../../images/experience/supplyChainManagement.png")}
                               />
                             </ElementSkills>
-                          </ElementList>
+                          </ElementList>,
+                          bpi,
+                          "http://bpi.vn/",
+                          "Bpi",
+                          "Supply Chain Management"
                         )
                       }
                     >
-                      <ElementTitle className="vertical-timeline-element-title">
-                        <Link href="http://bpi.vn/" target="_blank">
-                          Supply Chain Management
-                        </Link>
-                      </ElementTitle>
-                      <ElementSubtitle className="vertical-timeline-element-subtitle">
-                        Hanoi, Vietnam
-                      </ElementSubtitle>
-                    </ElementHeaderWrapper>
+                      See more
+                    </SeeMoreButton>
                   </VerticalTimelineElement>
                   {/* Just comment ulsa experience */}
                   {/* <VerticalTimelineElement
@@ -346,10 +436,13 @@ const ResumeSection = ({ toggle }) => {
               </WorkContainer>
             )}
             {popupContent && (
-              <ExperiencePopup
+              <ResumeExperiencePopup
                 content={popupContent}
                 onClose={closePopup}
                 imagePreview={popupImagePreview}
+                companyLink={companyLink}
+                companyName={companyName}
+                position={position}
               />
             )}
           </ResumeContent>

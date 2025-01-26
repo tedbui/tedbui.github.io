@@ -15,7 +15,7 @@ export const ExtracurricularContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(to bottom, rgb(4, 55, 120), #01161e);
+  background: #434343;
 
   @media screen and (max-width: 768px) {
     height: 1100px;
