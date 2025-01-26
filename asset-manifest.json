@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.ee4fe4fe.css",
-    "main.js": "/static/js/main.11148a64.js",
+    "main.js": "/static/js/main.6aecc184.js",
     "static/media/tien_thanh_bui.png": "/static/media/tien_thanh_bui.cc88d961d74747c9807f.png",
     "static/media/autumn3.jpg": "/static/media/autumn3.aed7e1c935fc5d9f9b6e.jpg",
     "static/media/autumn2.jpg": "/static/media/autumn2.60e6d7611111f14beb81.jpg",
@@ -10,6 +10,7 @@
     "static/media/hanoiMidAutumn.jpg": "/static/media/hanoiMidAutumn.f2cd73bb4279edda1eb2.jpg",
     "static/media/autumn4.jpg": "/static/media/autumn4.a011b20a2da8892ddefb.jpg",
     "static/media/autumn1.jpg": "/static/media/autumn1.a78c7c967a9ba172684e.jpg",
+    "static/media/ekline.png": "/static/media/ekline.5504bf0ccc332dd6a348.png",
     "static/media/autumn5.jpg": "/static/media/autumn5.91fcba245ef387011cb4.jpg",
     "static/media/cebon1.jpg": "/static/media/cebon1.9670a87744fb9b7c9f2a.jpg",
     "static/media/muonglat4.jfif": "/static/media/muonglat4.953a02cfb5c162cbf3ec.jfif",
@@ -17,10 +18,13 @@
     "static/media/muongLat.jfif": "/static/media/muongLat.e0d2897627a635ce0b31.jfif",
     "static/media/muonglat1.jfif": "/static/media/muonglat1.e0d2897627a635ce0b31.jfif",
     "static/media/cebonPerfume.png": "/static/media/cebonPerfume.22b2fd687ec7f19cfcc1.png",
+    "static/media/universityOfWashington.jpg": "/static/media/universityOfWashington.35df5d258896aa0dd920.jpg",
     "static/media/muonglat2.jfif": "/static/media/muonglat2.86c89a4b2215249f2c97.jfif",
     "static/media/muongLatIcon.jfif": "/static/media/muongLatIcon.9224422ced6579b8a5a1.jfif",
     "static/media/muonglat3.jfif": "/static/media/muonglat3.9224422ced6579b8a5a1.jfif",
+    "static/media/bpi.jpg": "/static/media/bpi.d21d994b48a5283f431f.jpg",
     "static/media/microsoft-logo.png": "/static/media/microsoft-logo.85579c8b23551498bea7.png",
+    "static/media/vietclay.jpg": "/static/media/vietclay.674d6e81410688ba9868.jpg",
     "static/media/commercialPhotographer5.png": "/static/media/commercialPhotographer5.b4060d5d86c0ae347472.png",
     "static/media/commercialPhotographer1.png": "/static/media/commercialPhotographer1.4b78a7b5611bb312c5a7.png",
     "static/media/cebonPerfumeIcon.png": "/static/media/cebonPerfumeIcon.997e6736310437bef954.png",
@@ -33,10 +37,10 @@
     "static/media/foster-logo.jfif": "/static/media/foster-logo.471d0cd33ef845cc28f3.jfif",
     "index.html": "/index.html",
     "main.ee4fe4fe.css.map": "/static/css/main.ee4fe4fe.css.map",
-    "main.11148a64.js.map": "/static/js/main.11148a64.js.map"
+    "main.6aecc184.js.map": "/static/js/main.6aecc184.js.map"
   },
   "entrypoints": [
     "static/css/main.ee4fe4fe.css",
-    "static/js/main.11148a64.js"
+    "static/js/main.6aecc184.js"
   ]
 }
