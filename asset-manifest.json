@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.ee4fe4fe.css",
-    "main.js": "/static/js/main.6aecc184.js",
+    "main.css": "/static/css/main.60ac51b7.css",
+    "main.js": "/static/js/main.ce3224a8.js",
     "static/media/tien_thanh_bui.png": "/static/media/tien_thanh_bui.cc88d961d74747c9807f.png",
     "static/media/autumn3.jpg": "/static/media/autumn3.aed7e1c935fc5d9f9b6e.jpg",
     "static/media/autumn2.jpg": "/static/media/autumn2.60e6d7611111f14beb81.jpg",
@@ -25,22 +25,16 @@
     "static/media/bpi.jpg": "/static/media/bpi.d21d994b48a5283f431f.jpg",
     "static/media/microsoft-logo.png": "/static/media/microsoft-logo.85579c8b23551498bea7.png",
     "static/media/vietclay.jpg": "/static/media/vietclay.674d6e81410688ba9868.jpg",
-    "static/media/commercialPhotographer5.png": "/static/media/commercialPhotographer5.b4060d5d86c0ae347472.png",
-    "static/media/commercialPhotographer1.png": "/static/media/commercialPhotographer1.4b78a7b5611bb312c5a7.png",
     "static/media/cebonPerfumeIcon.png": "/static/media/cebonPerfumeIcon.997e6736310437bef954.png",
-    "static/media/commercialPhotographer3.png": "/static/media/commercialPhotographer3.89aa826cc8651c84f392.png",
     "static/media/golf.svg": "/static/media/golf.d49f1a97416f9118889be87ccdd22532.svg",
     "static/media/google-logo.png": "/static/media/google-logo.1260e96dae1ddd9efca5.png",
-    "static/media/commercialPhotographer4.png": "/static/media/commercialPhotographer4.b87796074162d619f55d.png",
-    "static/media/commercialPhotographer2.jpg": "/static/media/commercialPhotographer2.0c8039b21dc87e334df3.jpg",
-    "static/media/assistantProductionCoordinator1.avif": "/static/media/assistantProductionCoordinator1.6c83793932a92f29f3ff.avif",
     "static/media/foster-logo.jfif": "/static/media/foster-logo.471d0cd33ef845cc28f3.jfif",
     "index.html": "/index.html",
-    "main.ee4fe4fe.css.map": "/static/css/main.ee4fe4fe.css.map",
-    "main.6aecc184.js.map": "/static/js/main.6aecc184.js.map"
+    "main.60ac51b7.css.map": "/static/css/main.60ac51b7.css.map",
+    "main.ce3224a8.js.map": "/static/js/main.ce3224a8.js.map"
   },
   "entrypoints": [
-    "static/css/main.ee4fe4fe.css",
-    "static/js/main.6aecc184.js"
+    "static/css/main.60ac51b7.css",
+    "static/js/main.ce3224a8.js"
   ]
 }
