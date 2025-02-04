@@ -34,21 +34,6 @@ import ekline from "../../images/resume/ekline.png";
 import bpi from "../../images/resume/bpi.jpg";
 import vietclay from "../../images/resume/vietclay.jpg";
 import universityOfWashington from "../../images/resume/universityOfWashington.jpg";
-const calculateMonthsWorked = (startDate, endDate = "Present") => {
-  // Convert strings to Date objects
-  const start = new Date(startDate);
-  const end = endDate === "Present" ? new Date() : new Date(endDate);
-
-  // Validate input
-  if (start > end) {
-    return "Start date must be before end date.";
-  }
-
-  // Calculate months worked
-  const months = Math.ceil((end - start) / (1000 * 60 * 60 * 24 * 30.44));
-
-  return months;
-};
 const ResumeSection = ({ toggle }) => {
   const [showEducation, setShowEducation] = useState(true);
 
@@ -206,7 +191,21 @@ const ResumeSection = ({ toggle }) => {
                               HANOI, VIETNAM | ASSISTANT PRODUCTION COORDINATOR
                               | AUG. 2023–MAR. 2024
                             </ElementSubtitle3>
+                            <br></br>
+                            <u>
+                              <strong> WHAT I DID:</strong>
+                              <br></br>{" "}
+                            </u>
+                            <strong>
+                              During my time at Ekline, I successfully
+                              streamlined production workflows, optimized
+                              supplier communication, and maintained rigorous
+                              quality control. I also managed relationships with
+                              international suppliers and handled large-scale
+                              orders effectively.
+                            </strong>
                             <ElementList>
+                              <br></br>
                               <ElementListItem>
                                 <strong>Challenge:</strong>
                                 <ul style={{ paddingLeft: "15px" }}>
@@ -227,6 +226,46 @@ const ResumeSection = ({ toggle }) => {
                                 </ul>
                               </ElementListItem>
 
+                              <ElementListItem>
+                                <strong>Key Achievements:</strong>
+                                <ul style={{ paddingLeft: "15px" }}>
+                                  <li>
+                                    Generated $2,000 annual cost savings through
+                                    strategic supplier negotiations
+                                  </li>
+                                  <li>
+                                    Managed relationships with 3+ international
+                                    material suppliers
+                                  </li>
+                                  <li>
+                                    Reduced quality issue resolution time by 20%
+                                  </li>
+                                  <li>
+                                    Successfully handled large-scale orders (up
+                                    to 5,000 units monthly)
+                                  </li>
+                                </ul>
+                              </ElementListItem>
+                              <ElementListItem>
+                                <strong>Key Achievements:</strong>
+                                <ul style={{ paddingLeft: "15px" }}>
+                                  <li>
+                                    Generated $2,000 annual cost savings through
+                                    strategic supplier negotiations
+                                  </li>
+                                  <li>
+                                    Managed relationships with 3+ international
+                                    material suppliers
+                                  </li>
+                                  <li>
+                                    Reduced quality issue resolution time by 20%
+                                  </li>
+                                  <li>
+                                    Successfully handled large-scale orders (up
+                                    to 5,000 units monthly)
+                                  </li>
+                                </ul>
+                              </ElementListItem>
                               <ElementListItem>
                                 <strong>Key Achievements:</strong>
                                 <ul style={{ paddingLeft: "15px" }}>
@@ -315,7 +354,19 @@ const ResumeSection = ({ toggle }) => {
                               | AUG 2024–PRESENT
                             </ElementSubtitle3>
                             <br></br>
+                            <u>
+                              <strong> WHAT I DID:</strong>
+                              <br></br>{" "}
+                            </u>
+                            <strong>
+                              As a Barista and Inventory Manager at the
+                              University of Washington, I optimized customer
+                              service processes, trained staff, and implemented
+                              strategies to reduce wait times and increase
+                              sales.
+                            </strong>{" "}
                             <ElementList>
+                              <br></br>
                               <ElementListItem>
                                 <strong>Challenge:</strong>
                                 <ul style={{ paddingLeft: "15px" }}>
@@ -338,6 +389,26 @@ const ResumeSection = ({ toggle }) => {
                                 </ul>
                               </ElementListItem>
 
+                              <ElementListItem>
+                                <strong>Key Achievements:</strong>
+                                <ul style={{ paddingLeft: "15px" }}>
+                                  <li>Reduced customer wait times by 20%.</li>
+                                  <li>
+                                    Increased daily revenue by 10% through
+                                    upselling.
+                                  </li>
+                                </ul>
+                              </ElementListItem>
+                              <ElementListItem>
+                                <strong>Key Achievements:</strong>
+                                <ul style={{ paddingLeft: "15px" }}>
+                                  <li>Reduced customer wait times by 20%.</li>
+                                  <li>
+                                    Increased daily revenue by 10% through
+                                    upselling.
+                                  </li>
+                                </ul>
+                              </ElementListItem>
                               <ElementListItem>
                                 <strong>Key Achievements:</strong>
                                 <ul style={{ paddingLeft: "15px" }}>
@@ -417,7 +488,19 @@ const ResumeSection = ({ toggle }) => {
                               | HANOI, VIETNAM | COMMERCIAL PHOTOGRAPHER | MAY
                               2022–JUN 2023
                             </ElementSubtitle3>
+                            <br></br>
+                            <u>
+                              <strong> WHAT I DID:</strong>
+                              <br></br>{" "}
+                            </u>
+                            <strong>
+                              At Vietclay, I developed and executed visual
+                              content strategies, collaborated with marketing
+                              teams, and improved the image processing workflow
+                              to enhance product presentation.
+                            </strong>{" "}
                             <ElementList>
+                              <br></br>
                               <ElementListItem>
                                 <strong>Challenge:</strong>
                                 <ul style={{ paddingLeft: "15px" }}>
@@ -440,6 +523,32 @@ const ResumeSection = ({ toggle }) => {
                                 </ul>
                               </ElementListItem>
 
+                              <ElementListItem>
+                                <strong>Key Achievements:</strong>
+                                <ul style={{ paddingLeft: "15px" }}>
+                                  <li>
+                                    Increased revenue by 50% during peak seasons
+                                    through attractive product imagery.
+                                  </li>
+                                  <li>
+                                    Improved task efficiency by 30% through
+                                    effective collaboration.
+                                  </li>
+                                </ul>
+                              </ElementListItem>
+                              <ElementListItem>
+                                <strong>Key Achievements:</strong>
+                                <ul style={{ paddingLeft: "15px" }}>
+                                  <li>
+                                    Increased revenue by 50% during peak seasons
+                                    through attractive product imagery.
+                                  </li>
+                                  <li>
+                                    Improved task efficiency by 30% through
+                                    effective collaboration.
+                                  </li>
+                                </ul>
+                              </ElementListItem>
                               <ElementListItem>
                                 <strong>Key Achievements:</strong>
                                 <ul style={{ paddingLeft: "15px" }}>
@@ -517,7 +626,20 @@ const ResumeSection = ({ toggle }) => {
                               VIETNAM | SUPPLY CHAIN MANAGEMENT | FEB 2023–APR
                               2023
                             </ElementSubtitle3>
+                            <br></br>
+                            <u>
+                              <strong> WHAT I DID:</strong>
+                              <br></br>{" "}
+                            </u>
+                            <strong>
+                              In my role at Bpi, I focused on optimizing supply
+                              chain processes, ensuring compliance with
+                              regulations, and enhancing documentation
+                              management to facilitate smoother customs
+                              clearance.
+                            </strong>{" "}
                             <ElementList>
+                              <br></br>
                               <ElementListItem>
                                 <strong>Challenge:</strong>
                                 <ul style={{ paddingLeft: "15px" }}>
@@ -541,6 +663,32 @@ const ResumeSection = ({ toggle }) => {
                                 </ul>
                               </ElementListItem>
 
+                              <ElementListItem>
+                                <strong>Key Achievements:</strong>
+                                <ul style={{ paddingLeft: "15px" }}>
+                                  <li>
+                                    Achieved smooth customs clearance for over
+                                    20 shipments per month.
+                                  </li>
+                                  <li>
+                                    Improved documentation management efficiency
+                                    by 30%.
+                                  </li>
+                                </ul>
+                              </ElementListItem>
+                              <ElementListItem>
+                                <strong>Key Achievements:</strong>
+                                <ul style={{ paddingLeft: "15px" }}>
+                                  <li>
+                                    Achieved smooth customs clearance for over
+                                    20 shipments per month.
+                                  </li>
+                                  <li>
+                                    Improved documentation management efficiency
+                                    by 30%.
+                                  </li>
+                                </ul>
+                              </ElementListItem>
                               <ElementListItem>
                                 <strong>Key Achievements:</strong>
                                 <ul style={{ paddingLeft: "15px" }}>

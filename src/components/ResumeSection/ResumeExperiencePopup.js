@@ -122,8 +122,29 @@ const PopupContent = styled.div`
 `;
 
 export const ResumeExperiencePopup = ({ content, onClose }) => {
+  React.useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === "Escape") {
+        onClose();
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [onClose]);
   return (
-    <PopupOverlay onClick={onClose}>
+    <PopupOverlay
+      onClick={onClose}
+      onKeyDown={(e) => {
+        console.log("sssss: ", e.key);
+        console.log("sssss2222: ", e);
+        if (e.key === "Escape") {
+          onClose();
+        }
+      }}
+    >
       <PopupCard onClick={(e) => e.stopPropagation()}>
         <PopupHeader>
           <PopupTitleWrapper>
