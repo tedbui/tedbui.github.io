@@ -12,15 +12,15 @@ import {
   WorkContainer,
   ElementTitle,
   ElementSubtitle,
-  ElementP,
   ElementList,
   ElementListItem,
-  ElementSkills,
-  ElementSkillsLogo,
+  ElementSubtitle3,
   ElementHeaderWrapper,
   Link,
   ResumeExperienceSubtitle,
   SeeMoreButton,
+  PopupImagePreview,
+  ElementSubtitle2,
 } from "./ResumeElements";
 import { FaGraduationCap } from "react-icons/fa";
 import { MdWork } from "react-icons/md";
@@ -32,7 +32,7 @@ import "react-vertical-timeline-component/style.min.css";
 
 import ekline from "../../images/resume/ekline.png";
 import bpi from "../../images/resume/bpi.jpg";
-import vietlay from "../../images/resume/vietclay.jpg";
+import vietclay from "../../images/resume/vietclay.jpg";
 import universityOfWashington from "../../images/resume/universityOfWashington.jpg";
 const calculateMonthsWorked = (startDate, endDate = "Present") => {
   // Convert strings to Date objects
@@ -144,7 +144,6 @@ const ResumeSection = ({ toggle }) => {
               <WorkContainer>
                 <VerticalTimeline lineColor="#F6AE2D">
                   <VerticalTimelineElement
-                    date="Nov 2024 - Present"
                     iconStyle={{ background: "#F6AE2D", color: "white" }}
                     icon={<MdWork />}
                   >
@@ -158,8 +157,7 @@ const ResumeSection = ({ toggle }) => {
                       </Link>
                     </ElementTitle>
                     <ResumeExperienceSubtitle className="vertical-timeline-element-subtitle">
-                      Nov 2024 - Present · {calculateMonthsWorked("Nov 2024")}{" "}
-                      months
+                      Nov 2024 - Present
                     </ResumeExperienceSubtitle>
                     <ResumeExperienceSubtitle className="vertical-timeline-element-subtitle">
                       Vinaherbfoods
@@ -169,7 +167,6 @@ const ResumeSection = ({ toggle }) => {
                     </ResumeExperienceSubtitle>
                   </VerticalTimelineElement>
                   <VerticalTimelineElement
-                    date="Aug 2023 - Mar 2024"
                     iconStyle={{ background: "#F6AE2D", color: "white" }}
                     icon={<MdWork />}
                   >
@@ -180,8 +177,7 @@ const ResumeSection = ({ toggle }) => {
                       </Link>
                     </ElementTitle>
                     <ResumeExperienceSubtitle className="vertical-timeline-element-subtitle">
-                      Aug 2023 - Mar 2024 ·{" "}
-                      {calculateMonthsWorked("Aug 2023", "Mar 2024")} months
+                      Aug 2023 - Mar 2024
                     </ResumeExperienceSubtitle>
                     <ResumeExperienceSubtitle className="vertical-timeline-element-subtitle">
                       Ekline
@@ -192,31 +188,78 @@ const ResumeSection = ({ toggle }) => {
                     <SeeMoreButton
                       onClick={() =>
                         openPopup(
-                          <ElementList>
-                            <ElementListItem>
-                              Created $2,000 in yearly cost savings by
-                              communicating and maintaining relationships with
-                              more than 3 material and garment suppliers
-                              overseas to ensure timely delivery.
-                            </ElementListItem>
-                            <ElementListItem>
-                              Maintained up to 90% quality standards by
-                              carefully assessing pre-production samples for
-                              color precision and fabric length adherence,
-                              resulting in a 20% reduction in time spent
-                              addressing quality-related problems.
-                            </ElementListItem>
-                            <ElementListItem>
-                              Managed and coordinated large-scale orders of up
-                              to 5,000 units monthly using Excel
-                            </ElementListItem>
-                            <ElementSkills>
-                              <ElementSkillsLogo
-                                src={require("../../images/experience/assistantProductionCoordinator1.avif")}
-                              />
-                            </ElementSkills>
-                          </ElementList>,
-                          ekline,
+                          <div
+                            style={{
+                              maxHeight: "600px",
+                              overflowY: "auto",
+                              paddingRight: "10px",
+                            }}
+                          >
+                            <ElementSubtitle2>
+                              As an Assistant Production Coordinator at Ekline,
+                              I focused on streamlining production workflows and
+                              enhancing communication within the supply chain.
+                            </ElementSubtitle2>
+                            <PopupImagePreview src={ekline}></PopupImagePreview>
+                            <ElementSubtitle3>
+                              {<Link href="https://ekline.io/">Ekline </Link>}|
+                              HANOI, VIETNAM | ASSISTANT PRODUCTION COORDINATOR
+                              | AUG. 2023–MAR. 2024
+                            </ElementSubtitle3>
+                            <ElementList>
+                              <ElementListItem>
+                                <strong>Challenge:</strong>
+                                <ul style={{ paddingLeft: "15px" }}>
+                                  <li>
+                                    Streamline production workflows in a dynamic
+                                    garment manufacturing environment with
+                                    complex international supply chains.
+                                  </li>
+                                </ul>
+                              </ElementListItem>
+
+                              <ElementListItem>
+                                <strong>Strategic Approach:</strong>
+                                <ul style={{ paddingLeft: "15px" }}>
+                                  <li>Optimize supplier communication</li>
+                                  <li>Reduce production costs</li>
+                                  <li>Maintain rigorous quality control</li>
+                                </ul>
+                              </ElementListItem>
+
+                              <ElementListItem>
+                                <strong>Key Achievements:</strong>
+                                <ul style={{ paddingLeft: "15px" }}>
+                                  <li>
+                                    Generated $2,000 annual cost savings through
+                                    strategic supplier negotiations
+                                  </li>
+                                  <li>
+                                    Managed relationships with 3+ international
+                                    material suppliers
+                                  </li>
+                                  <li>
+                                    Reduced quality issue resolution time by 20%
+                                  </li>
+                                  <li>
+                                    Successfully handled large-scale orders (up
+                                    to 5,000 units monthly)
+                                  </li>
+                                </ul>
+                              </ElementListItem>
+                              <ElementListItem>
+                                <strong>Impact:</strong>
+                                <ul style={{ paddingLeft: "15px" }}>
+                                  <li>
+                                    Consistently maintained 90% quality
+                                    standards
+                                  </li>
+                                  <li>Improved operational efficiency</li>
+                                  <li>Reduced production expenses</li>
+                                </ul>
+                              </ElementListItem>
+                            </ElementList>
+                          </div>,
                           "https://ekline.io/",
                           "Ekline",
                           "Assistant Production Coordinator"
@@ -227,19 +270,16 @@ const ResumeSection = ({ toggle }) => {
                     </SeeMoreButton>
                   </VerticalTimelineElement>
                   <VerticalTimelineElement
-                    date="Aug 2024 - Present"
                     iconStyle={{ background: "#F6AE2D", color: "white" }}
                     icon={<MdWork />}
                   >
-                    <ElementHeaderWrapper></ElementHeaderWrapper>
                     <ElementTitle className="vertical-timeline-element-title">
                       <Link href="https://www.washington.edu" target="_blank">
                         Barista/Inventory Manager
                       </Link>
                     </ElementTitle>
                     <ResumeExperienceSubtitle className="vertical-timeline-element-subtitle">
-                      Aug 2024 - Present · {calculateMonthsWorked("Aug 2024")}{" "}
-                      months
+                      Aug 2024 - Present
                     </ResumeExperienceSubtitle>
                     <ResumeExperienceSubtitle className="vertical-timeline-element-subtitle">
                       University of Washington
@@ -250,27 +290,79 @@ const ResumeSection = ({ toggle }) => {
                     <SeeMoreButton
                       onClick={() =>
                         openPopup(
-                          <ElementList>
-                            <ElementListItem>
-                              Efficiently managed high-volume customer traffic,
-                              processing 100+ orders daily while maintaining a
-                              friendly and professional demeanor.
-                            </ElementListItem>
-                            <ElementListItem>
-                              Reduced customer wait times by 20% by proactively
-                              recommending popular menu items and streamlining
-                              the ordering process.
-                            </ElementListItem>
-                            <ElementListItem>
-                              Increased daily revenue by 10% through effective
-                              upselling techniques, suggesting complementary
-                              items, and promoting special offers.
-                            </ElementListItem>
-                          </ElementList>,
-                          universityOfWashington,
+                          <div
+                            style={{
+                              maxHeight: "600px",
+                              overflowY: "auto",
+                              paddingRight: "10px",
+                            }}
+                          >
+                            <ElementSubtitle2>
+                              As a Barista and Inventory Manager at the
+                              University of Washington, I focused on enhancing
+                              customer service and operational efficiency.
+                            </ElementSubtitle2>
+                            <PopupImagePreview
+                              src={universityOfWashington}
+                            ></PopupImagePreview>
+                            <ElementSubtitle3>
+                              {
+                                <Link href="https://www.washington.edu">
+                                  University of Washington{" "}
+                                </Link>
+                              }
+                              | SEATTLE, WASHINGTON | BARISTA/INVENTORY MANAGER
+                              | AUG 2024–PRESENT
+                            </ElementSubtitle3>
+                            <br></br>
+                            <ElementList>
+                              <ElementListItem>
+                                <strong>Challenge:</strong>
+                                <ul style={{ paddingLeft: "15px" }}>
+                                  <li>
+                                    Manage high customer volume during peak
+                                    hours.
+                                  </li>
+                                </ul>
+                              </ElementListItem>
+
+                              <ElementListItem>
+                                <strong>Strategic Approach:</strong>
+                                <ul style={{ paddingLeft: "15px" }}>
+                                  <li>
+                                    Optimize ordering and payment processes.
+                                  </li>
+                                  <li>
+                                    Train staff to enhance customer service.
+                                  </li>
+                                </ul>
+                              </ElementListItem>
+
+                              <ElementListItem>
+                                <strong>Key Achievements:</strong>
+                                <ul style={{ paddingLeft: "15px" }}>
+                                  <li>Reduced customer wait times by 20%.</li>
+                                  <li>
+                                    Increased daily revenue by 10% through
+                                    upselling.
+                                  </li>
+                                </ul>
+                              </ElementListItem>
+
+                              <ElementListItem>
+                                <strong>Impact:</strong>
+                                <ul style={{ paddingLeft: "15px" }}>
+                                  <li>Enhanced customer experience.</li>
+                                  <li>
+                                    Increased customer satisfaction and loyalty.
+                                  </li>
+                                </ul>
+                              </ElementListItem>
+                            </ElementList>
+                          </div>,
                           "https://www.washington.edu",
                           "University of Washington",
-                          "Barista/Inventory Manager - UW Food & Housing Services"
+                          "Barista/Inventory Manager"
                         )
                       }
                     >
@@ -278,7 +370,6 @@ const ResumeSection = ({ toggle }) => {
                     </SeeMoreButton>
                   </VerticalTimelineElement>
                   <VerticalTimelineElement
-                    date="May 2022 - Jun 2023"
                     iconStyle={{ background: "#F6AE2D", color: "white" }}
                     icon={<MdWork />}
                   >
@@ -291,8 +382,7 @@ const ResumeSection = ({ toggle }) => {
                       </Link>
                     </ElementTitle>
                     <ResumeExperienceSubtitle className="vertical-timeline-element-subtitle">
-                      May 2022 - Jun 2023 ·{" "}
-                      {calculateMonthsWorked("May 2022", "Jun 2023")} months
+                      May 2022 - Jun 2023
                     </ResumeExperienceSubtitle>
                     <ResumeExperienceSubtitle className="vertical-timeline-element-subtitle">
                       Vietclay
@@ -303,47 +393,82 @@ const ResumeSection = ({ toggle }) => {
                     <SeeMoreButton
                       onClick={() =>
                         openPopup(
-                          <ElementList>
-                            <ElementSubtitle className="vertical-timeline-element-subtitle">
-                              Commercial Photographer
-                            </ElementSubtitle>
-                            <ElementListItem>
-                              Increased revenue by 50% during peak seasons by
-                              developing and executing innovative product
-                              presentation strategies across various marketing
-                              channels (e.g., social media, website, brochures).
-                            </ElementListItem>
-                            <ElementListItem>
-                              Streamlined the image processing workflow by
-                              editing, organizing, resizing, cleaning surfaces,
-                              removing imperfections, and correcting color,
-                              ensuring high-quality final products.
-                            </ElementListItem>
-                            <ElementListItem>
-                              Improved task efficiency by 30% by collaborating
-                              with the marketing team to ensure brand
-                              consistency and visual appeal across all marketing
-                              materials
-                            </ElementListItem>
-                            <ElementSkills>
-                              <ElementSkillsLogo
-                                src={require("../../images/experience/commercialPhotographer1.png")}
-                              />
-                              <ElementSkillsLogo
-                                src={require("../../images/experience/commercialPhotographer2.jpg")}
-                              />
-                              <ElementSkillsLogo
-                                src={require("../../images/experience/commercialPhotographer3.png")}
-                              />
-                              <ElementSkillsLogo
-                                src={require("../../images/experience/commercialPhotographer4.png")}
-                              />
-                              <ElementSkillsLogo
-                                src={require("../../images/experience/commercialPhotographer5.png")}
-                              />
-                            </ElementSkills>
-                          </ElementList>,
-                          vietlay,
+                          <div
+                            style={{
+                              maxHeight: "600px",
+                              overflowY: "auto",
+                              paddingRight: "10px",
+                            }}
+                          >
+                            <ElementSubtitle2>
+                              As a Commercial Photographer at Vietclay, I
+                              focused on creating visual content to elevate
+                              brand presence and drive sales.
+                            </ElementSubtitle2>
+                            <PopupImagePreview
+                              src={vietclay}
+                            ></PopupImagePreview>
+                            <ElementSubtitle3>
+                              {
+                                <Link href="https://vietclay.com/">
+                                  Vietclay{" "}
+                                </Link>
+                              }
+                              | HANOI, VIETNAM | COMMERCIAL PHOTOGRAPHER | MAY
+                              2022–JUN 2023
+                            </ElementSubtitle3>
+                            <ElementList>
+                              <ElementListItem>
+                                <strong>Challenge:</strong>
+                                <ul style={{ paddingLeft: "15px" }}>
+                                  <li>
+                                    Create compelling visual strategies to
+                                    increase revenue during peak seasons.
+                                  </li>
+                                </ul>
+                              </ElementListItem>
+
+                              <ElementListItem>
+                                <strong>Strategic Approach:</strong>
+                                <ul style={{ paddingLeft: "15px" }}>
+                                  <li>
+                                    Develop a multi-channel marketing plan.
+                                  </li>
+                                  <li>
+                                    Optimize the image processing workflow.
+                                  </li>
+                                </ul>
+                              </ElementListItem>
+
+                              <ElementListItem>
+                                <strong>Key Achievements:</strong>
+                                <ul style={{ paddingLeft: "15px" }}>
+                                  <li>
+                                    Increased revenue by 50% during peak seasons
+                                    through attractive product imagery.
+                                  </li>
+                                  <li>
+                                    Improved task efficiency by 30% through
+                                    effective collaboration.
+                                  </li>
+                                </ul>
+                              </ElementListItem>
+
+                              <ElementListItem>
+                                <strong>Impact:</strong>
+                                <ul style={{ paddingLeft: "15px" }}>
+                                  <li>
+                                    Enhanced brand presence across marketing
+                                    channels.
+                                  </li>
+                                  <li>
+                                    Improved customer experience through
+                                    high-quality visuals.
+                                  </li>
+                                </ul>
+                              </ElementListItem>
+                            </ElementList>
+                          </div>,
                           "https://vietclay.com/",
                           "Vietclay",
                           "Commercial Photographer"
@@ -354,19 +479,16 @@ const ResumeSection = ({ toggle }) => {
                     </SeeMoreButton>
                   </VerticalTimelineElement>
                   <VerticalTimelineElement
-                    date="Feb 2023 - Apr 2023"
                     iconStyle={{ background: "#F6AE2D", color: "white" }}
                     icon={<MdWork />}
                   >
-                    <ElementHeaderWrapper></ElementHeaderWrapper>
                     <ElementTitle className="vertical-timeline-element-title">
                       <Link href="http://bpi.vn/" target="_blank">
                         Supply Chain Management
                       </Link>
                     </ElementTitle>
                     <ResumeExperienceSubtitle className="vertical-timeline-element-subtitle">
-                      Feb 2023 - Apr 2023 ·{" "}
-                      {calculateMonthsWorked("Feb 2023", "Apr 2023")} months
+                      Feb 2023 - Apr 2023
                     </ResumeExperienceSubtitle>
                     <ResumeExperienceSubtitle className="vertical-timeline-element-subtitle">
                       Bpi
@@ -377,25 +499,77 @@ const ResumeSection = ({ toggle }) => {
                     <SeeMoreButton
                       onClick={() =>
                         openPopup(
-                          <ElementList>
-                            <ElementListItem>
-                              Improved documentation management efficiency by
-                              30% by collaborating with internal teams to
-                              integrate fumigation-related documentation
-                            </ElementListItem>
-                            <ElementListItem>
-                              Achieved smooth customs clearance for over 20
-                              shipments per month by ensuring compliance with
-                              international trade regulations and a 100% match
-                              between invoices and packing lists.
-                            </ElementListItem>
-                            <ElementSkills>
-                              <ElementSkillsLogo
-                                src={require("../../images/experience/supplyChainManagement.png")}
-                              />
-                            </ElementSkills>
-                          </ElementList>,
-                          bpi,
+                          <div
+                            style={{
+                              maxHeight: "600px",
+                              overflowY: "auto",
+                              paddingRight: "10px",
+                            }}
+                          >
+                            <ElementSubtitle2>
+                              In my role at Bpi, I focused on optimizing supply
+                              chain processes to enhance operational efficiency
+                              and compliance.
+                            </ElementSubtitle2>
+                            <PopupImagePreview src={bpi}></PopupImagePreview>
+                            <ElementSubtitle3>
+                              {<Link href="http://bpi.vn/">Bpi </Link>}| HANOI,
+                              VIETNAM | SUPPLY CHAIN MANAGEMENT | FEB 2023–APR
+                              2023
+                            </ElementSubtitle3>
+                            <ElementList>
+                              <ElementListItem>
+                                <strong>Challenge:</strong>
+                                <ul style={{ paddingLeft: "15px" }}>
+                                  <li>
+                                    Ensure efficient customs clearance for
+                                    multiple shipments.
+                                  </li>
+                                </ul>
+                              </ElementListItem>
+
+                              <ElementListItem>
+                                <strong>Strategic Approach:</strong>
+                                <ul style={{ paddingLeft: "15px" }}>
+                                  <li>
+                                    Collaborate with internal teams to improve
+                                    documentation.
+                                  </li>
+                                  <li>
+                                    Monitor processes to ensure compliance.
+                                  </li>
+                                </ul>
+                              </ElementListItem>
+
+                              <ElementListItem>
+                                <strong>Key Achievements:</strong>
+                                <ul style={{ paddingLeft: "15px" }}>
+                                  <li>
+                                    Achieved smooth customs clearance for over
+                                    20 shipments per month.
+                                  </li>
+                                  <li>
+                                    Improved documentation management efficiency
+                                    by 30%.
+                                  </li>
+                                </ul>
+                              </ElementListItem>
+
+                              <ElementListItem>
+                                <strong>Impact:</strong>
+                                <ul style={{ paddingLeft: "15px" }}>
+                                  <li>
+                                    Minimized risks in the customs clearance
+                                    process.
+                                  </li>
+                                  <li>
+                                    Enhanced relationships with suppliers and
+                                    customers.
+                                  </li>
+                                </ul>
+                              </ElementListItem>
+                            </ElementList>
+                          </div>,
                           "http://bpi.vn/",
                           "Bpi",
                           "Supply Chain Management"

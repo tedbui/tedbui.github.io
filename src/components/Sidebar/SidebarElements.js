@@ -64,7 +64,23 @@ export const SidebarLink = styled(LinkScroll)`
     transition: 0.2 ease-in-out;
   }
 `;
+export const SidebarLink2 = styled.a`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  text-decoration: none;
+  list-style: none;
+  transition: 0.2s ease-in-out;
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
 
+  &:hover {
+    color: #F6AE2D;
+    transition: 0.2 ease-in-out;
+  }
+`;
 export const SideBtnWrap = styled.div`
   display: flex;
   justify-content: center;

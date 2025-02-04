@@ -6,8 +6,7 @@ import {
   SidebarWrapper,
   SidebarMenu,
   SidebarLink,
-  SideBtnWrap,
-  SidebarRoute,
+  SidebarLink2,
 } from "./SidebarElements";
 
 const Sidebar = ({ isOpen, toggle }) => {
@@ -19,17 +18,6 @@ const Sidebar = ({ isOpen, toggle }) => {
       <SidebarWrapper>
         <SidebarMenu>
           <SidebarLink
-            to="home"
-            onClick={toggle}
-            smooth={true}
-            duration={500}
-            spy={true}
-            exact="true"
-            offset={-80}
-          >
-            Home
-          </SidebarLink>
-          <SidebarLink
             to="about"
             onClick={toggle}
             smooth={true}
@@ -38,7 +26,7 @@ const Sidebar = ({ isOpen, toggle }) => {
             exact="true"
             offset={-80}
           >
-            about
+            About
           </SidebarLink>
           <SidebarLink
             to="resume"
@@ -62,6 +50,24 @@ const Sidebar = ({ isOpen, toggle }) => {
           >
             Projects
           </SidebarLink>
+          <SidebarLink2>
+            <a
+              href="https://www.flickr.com/photos/198630723@N02/albums/"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                color: "white",
+                display: "flex",
+                alignItems: "center",
+                textDecoration: "none",
+                padding: "0 1rem",
+                height: "100%",
+                cursor: "pointer",
+              }}
+            >
+              Photography
+            </a>
+          </SidebarLink2>
           <SidebarLink
             to="certificates"
             onClick={toggle}
@@ -72,17 +78,6 @@ const Sidebar = ({ isOpen, toggle }) => {
             offset={-80}
           >
             Certificates
-          </SidebarLink>
-          <SidebarLink
-            to="photography"
-            onClick={toggle}
-            smooth={true}
-            duration={500}
-            spy={true}
-            exact="true"
-            offset={-80}
-          >
-            Photography
           </SidebarLink>
           <SidebarLink
             to="extracurricular"
@@ -107,9 +102,6 @@ const Sidebar = ({ isOpen, toggle }) => {
             Contact
           </SidebarLink>
         </SidebarMenu>
-        <SideBtnWrap>
-          <SidebarRoute to="/">Hire Me!</SidebarRoute>
-        </SideBtnWrap>
       </SidebarWrapper>
     </SidebarContainer>
   );

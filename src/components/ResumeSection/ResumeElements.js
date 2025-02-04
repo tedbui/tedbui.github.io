@@ -18,6 +18,21 @@ export const ResumeContainer = styled.div`
   //   }
 `;
 
+export const PopupImagePreview = styled.img`
+  width: 55%;
+  height: auto;
+  max-height: 80%;
+  margin: 0 auto;
+  margin-left: 100px;
+
+  @media screen and (max-width: 768px) {
+    width: 100%;
+    height: auto;
+    margin-top: 20px;
+    margin-left: 0;
+  }
+`;
+
 export const ResumeWrapper = styled.div`
   max-width: 1000px;
   width: 100%;
@@ -149,7 +164,8 @@ export const ElementTitle = styled.h3`
 export const ElementSubtitle = styled.h5`
   font-size: 0.8rem;
 `;
-
+export const ElementSubtitle2 = styled.h3``;
+export const ElementSubtitle3 = styled.h4``;
 export const WorkContainer = styled.div``;
 
 export const Link = styled.a`
@@ -172,6 +188,9 @@ export const ResumeExperienceSubtitle = styled.h5`
 `;
 
 export const SeeMoreButton = styled.button`
+  position: absolute;
+  bottom: 10px; /* Cách đáy 10px */
+  right: 10px; /* Cách phải 10px */
   background-color: #434343;
   color: #fff;
   border: none;
@@ -179,10 +198,9 @@ export const SeeMoreButton = styled.button`
   padding: 0.5rem 1rem;
   font-size: 0.8rem;
   cursor: pointer;
-  margin-left: 220px;
 
   &:hover {
-    background-color: #434343;
+    background-color: #5a5a5a;
     transition: background-color 0.2s ease-in-out;
   }
 `;

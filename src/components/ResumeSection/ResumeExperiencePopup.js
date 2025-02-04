@@ -29,7 +29,7 @@ const PopupCard = styled.div`
   padding: 30px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
   width: 70%;
-  height: 55%;
+  height: 70%;
   z-index: 200;
   display: flex;
   flex-direction: column;
@@ -52,8 +52,8 @@ const PopupTitleWrapper = styled.div`
   flex-direction: column;
 `;
 
-const PopupTitle = styled.h2`
-  font-size: 3rem;
+const PopupTitle = styled.u`
+  font-size: 2rem;
 
   @media screen and (max-width: 768px) {
     font-size: 1.5rem;
@@ -69,21 +69,10 @@ const PopupSubtitle = styled.h4`
   }
 `;
 
-const PopupContent = styled.div`
-  display: flex;
-  justify-content: space-between;
-  height: 90%;
-
-  @media screen and (max-width: 768px) {
-    flex-direction: column;
-    justify-content: flex-start;
-  }
-`;
-
 const PopupDescription = styled.div`
   font-size: 1rem;
   line-height: 1.5;
-  width: 50%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -91,20 +80,6 @@ const PopupDescription = styled.div`
 
   @media screen and (max-width: 768px) {
     width: 100%;
-  }
-`;
-
-const PopupImagePreview = styled.img`
-  width: 55%;
-  height: auto;
-  max-height: 80%;
-  margin-left: 25px;
-
-  @media screen and (max-width: 768px) {
-    width: 100%;
-    height: auto;
-    margin-top: 20px;
-    margin-left: 0;
   }
 `;
 
@@ -135,26 +110,24 @@ const MobileClose = styled.div`
     color: black;
   }
 `;
+const PopupContent = styled.div`
+  display: flex;
+  justify-content: space-between;
+  height: 90%;
+  width: 100%;
+  x @media screen and (max-width: 768px) {
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+`;
 
-export const ResumeExperiencePopup = ({
-  content,
-  onClose,
-  imagePreview,
-  position,
-  companyName,
-  companyLink,
-}) => {
+export const ResumeExperiencePopup = ({ content, onClose }) => {
   return (
     <PopupOverlay onClick={onClose}>
       <PopupCard onClick={(e) => e.stopPropagation()}>
         <PopupHeader>
           <PopupTitleWrapper>
-            <PopupTitle>{position}</PopupTitle>
-            <PopupSubtitle>
-              <Link href={companyLink} target="_blank">
-                {companyName}
-              </Link>
-            </PopupSubtitle>
+            <PopupTitle>ABOUT</PopupTitle>
           </PopupTitleWrapper>
           <CloseButton onClick={onClose}>
             <CloseText>Close</CloseText>
@@ -165,7 +138,7 @@ export const ResumeExperiencePopup = ({
         </PopupHeader>
         <PopupContent>
           <PopupDescription>{content}</PopupDescription>
-          <PopupImagePreview src={imagePreview}></PopupImagePreview>
+          {/* <PopupImagePreview src={imagePreview}></PopupImagePreview> */}
         </PopupContent>
       </PopupCard>
     </PopupOverlay>
