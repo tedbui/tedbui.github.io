@@ -66,6 +66,38 @@ export const CertificateWrapper = styled.div`
   }
 `;
 
+export const BadgeContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+  justify-content: center;
+  width: 100%;
+  padding: 0 0.5rem;
+
+  @media screen and (max-width: 768px) {
+    gap: 0.25rem;
+    margin-top: 0.75rem;
+  }
+`;
+
+export const Badge = styled.span`
+  background: #f0f0f0;
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+  font-size: 0.75rem;
+  color: #666;
+  white-space: nowrap;
+  display: inline-block;
+
+  @media screen and (max-width: 768px) {
+    font-size: 0.7rem;
+    padding: 0.2rem 0.5rem;
+    background: #f5f5f5;
+    border: 1px solid #eaeaea;
+  }
+`;
+
 export const CertificateCard = styled.div`
   background: white;
   display: flex;
@@ -87,7 +119,9 @@ export const CertificateCard = styled.div`
   }
 
   @media screen and (max-width: 768px) {
-    max-height: 200px;
+    padding: 20px;
+    max-height: none;
+    min-height: 200px;
   }
 `;
 export const CertificateIconWrapper = styled.div`
@@ -306,24 +340,6 @@ export const MobileClose = styled.div`
     cursor: pointer;
     color: black;
   }
-`;
-export const BadgeContainer = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-top: 0.5rem;
-  max-width: 100%; /* Prevent container overflow */
-`;
-
-export const Badge = styled.span`
-  background: #f0f0f0;
-  padding: 0.25rem 0.5rem;
-  border-radius: 1rem;
-  font-size: 0.75rem;
-  color: #666;
-  white-space: nowrap; /* Prevent badge text from wrapping */
-  overflow: hidden; /* Avoid overflow issues */
-  text-overflow: ellipsis; /* Add ellipsis for long text */
 `;
 export const CardDate = styled.div`
   display: flex;
