@@ -1,8 +1,99 @@
 # React Portfolio Development Guide
 
-## Overview
+# Project Setup Guide
 
-This guide provides instructions for developers on how to add new Experience and Extracurricular entries to the portfolio project.
+## Prerequisites
+
+- Node.js (v16+ recommended)
+- npm or yarn
+- **NOTE**: for install nodejs and npm in Macos, you can follow all steps in this link: https://treehouse.github.io/installation-guides/mac/node-mac.html
+
+## SSH Key Setup
+
+1. Generate SSH Key
+
+```bash
+ssh-keygen -t ed25519 -C "your_email@example.com"
+```
+
+2. Copy SSH Public Key
+
+```bash
+# For macOS/Linux
+cat ~/.ssh/id_ed25519.pub
+```
+
+3. Add SSH Key to GitHub
+
+- Go to GitHub → Settings → SSH and GPG keys
+- Click "New SSH key"
+- Paste copied public key
+- Save
+
+## Clone Project via SSH
+
+```bash
+git clone git@github.com:tedbui/tedbui.github.io.git
+cd tedbui.github.io
+```
+
+## Troubleshooting (if error)
+
+- Verify SSH key: `ssh -T git@github.com`
+
+## Install Dependencies
+
+```bash
+npm install
+# or
+yarn install
+```
+
+## Install Additional Dependencies
+
+```bash
+# React Icons
+npm install react-icons
+
+# Vertical Timeline
+npm install react-vertical-timeline-component
+
+# Styled Components
+npm install styled-components
+```
+
+## Environment Setup
+
+1. Create `.env` file in project root (if needed)
+2. Add any required environment variables
+
+## Run Development Server
+
+```bash
+npm start
+# or
+yarn start
+```
+
+## Common Issues
+
+- Ensure all dependencies are installed
+- Use Node.js v16+
+- Check console for specific error messages
+
+## Build and Deploy for Production
+
+#### Basically, build source code already include in command deploy so we don't need to run the command build. Just run the command deploy
+
+```bash
+npm run deploy
+# or
+yarn deploy
+```
+
+##
+
+# Adding Portfolio Sections
 
 ## 1. Adding New Experiences
 
@@ -137,10 +228,10 @@ The components are designed to be responsive:
 - The grid layout will automatically adjust based on the number of items
 - No additional configuration is needed when adding new items
 
-
 ## 3. Adding New Projects
 
 ### Prerequisites
+
 - Prepare image files for project icon and preview image
 - Images should be placed in the appropriate directory: `src/images/projects/`
 
@@ -151,6 +242,7 @@ The components are designed to be responsive:
 2. Locate the `projects` array within the `Projects` component
 
 3. Add a new object to the `projects` array with the following structure:
+
 ```javascript
 {
   image: projectIconImage, // Main icon/thumbnail
@@ -162,6 +254,7 @@ The components are designed to be responsive:
 ```
 
 4. Import the new images at the top of the file:
+
 ```javascript
 // Import project icon
 import newProjectIcon from "../../images/projects/newProjectIcon.png";
@@ -171,7 +264,9 @@ import newProjectPreview from "../../images/projects/newProjectPreview.jpg";
 ```
 
 ### Image Requirements
-- Project Icon: 
+
+- Project Icon:
+
   - Recommended size: Around 150x150 pixels
   - Place in `src/images/projects/`
 
@@ -181,25 +276,29 @@ import newProjectPreview from "../../images/projects/newProjectPreview.jpg";
   - Supports various image formats (PNG, JPEG, etc.)
 
 ## Best Practices
+
 - Write clear, concise project descriptions
 - Use high-quality, relevant images
 - Ensure dates and titles are accurate
 
 ## Responsive Design
+
 The Projects component is responsive:
+
 - Desktop: Displays up to 5 items in a row
 - Tablet: Displays 3 items in a row
 - Mobile: Displays 1 item per row
 
 ## Troubleshooting
+
 - If images don't display, verify import paths
 - Check image file formats and sizes
 - Ensure imported images are in the correct directories
 
-
 ## 4. Modify About Section (`about`)
 
 ### Structure
+
 ```javascript
 {
   id: "string", // Section identifier
@@ -220,19 +319,23 @@ The Projects component is responsive:
 ```
 
 ### How to Modify
+
 - Update any field directly in the object
 - For image changes, use `require()` with new image path
 
 ## Contact Section (`contact`)
 
 ### Structure
+
 Similar to About section, with specific fields for contact/graduating information
 
 ### Modification Steps
+
 - Update text fields as needed
 - Change image using `require()`
 
 ## Key Considerations
+
 - Maintain consistent boolean logic
 - Ensure image paths are correct
 - Keep description concise and meaningful
@@ -240,18 +343,22 @@ Similar to About section, with specific fields for contact/graduating informatio
 # 5. Resume Section Documentation
 
 ## Overview
+
 This guide explains how to add new entries to the Education and Work Experience sections of the Resume component.
 
 ## Prerequisites
+
 - Ensure all company/institution images are placed in `src/images/resume/`
 - Images should be imported at the top of `index.js`
 
 ### 5.1. Adding New Education Entry
 
 #### Location
+
 Open `src/components/Resume/index.js` and locate the `EducationContainer` component within the `showEducation` conditional render.
 
 #### Structure
+
 Add a new `VerticalTimelineElement` inside the `VerticalTimeline` component:
 
 ```jsx
@@ -271,18 +378,18 @@ Add a new `VerticalTimelineElement` inside the `VerticalTimeline` component:
   <ResumeExperienceSubtitle>
     Grade: X.X/X.X (if applicable)
   </ResumeExperienceSubtitle>
-  <ResumeExperienceSubtitle>
-    Degree/Program Details
-  </ResumeExperienceSubtitle>
+  <ResumeExperienceSubtitle>Degree/Program Details</ResumeExperienceSubtitle>
 </VerticalTimelineElement>
 ```
 
 ### 5.2. Adding New Work Experience Entry
 
 #### Location
+
 Open `src/components/Resume/index.js` and locate the `WorkContainer` component within the `!showEducation` conditional render.
 
 #### Structure
+
 Add a new `VerticalTimelineElement` inside the `VerticalTimeline` component:
 
 ```jsx
@@ -307,22 +414,47 @@ Add a new `VerticalTimelineElement` inside the `VerticalTimeline` component:
   <SeeMoreButton
     onClick={() =>
       openPopup(
-        <div style={{
-          maxHeight: "600px",
-          overflowY: "auto",
-          paddingRight: "10px",
-        }}>
-          <ElementSubtitle2>
-            Brief role description
-          </ElementSubtitle2>
+        <div
+          style={{
+            maxHeight: "600px",
+            overflowY: "auto",
+            paddingRight: "10px",
+          }}
+        >
+          <ElementSubtitle2>Brief role description</ElementSubtitle2>
           <PopupImagePreview src={companyImage}></PopupImagePreview>
           <ElementSubtitle3>
-            {<Link href="company-website">Company Name</Link>} |
-            LOCATION | POSITION | DATE RANGE
+            {<Link href="company-website">Company Name</Link>} | LOCATION |
+            POSITION | DATE RANGE
           </ElementSubtitle3>
           <br></br>
-          <u><strong>WHAT I DID:</strong><br></br></u>
-          <strong>Summary of role and achievements</strong>
+          <u>
+            <strong>WHAT I DID:</strong>
+            <br></br>
+          </u>
+          <b>
+            <li>Summary of role and achievements</li>
+          </b>
+
+          <p style={{ color: "red" }}>
+            <strong>ACHIEVEMENT</strong>
+          </p>
+          <p>
+            <li>
+              Some Achievement
+            </li>
+          </p>
+          <br></br>
+          <p>
+            <strong>BACKGROUND:</strong>
+          </p>
+          <p>
+            <li>
+              {" "}
+              Collaborated with cross-functional teams to improve supply chain efficiency,
+              resulting in stronger supplier relationships and smoother operations.
+            </li>
+          </p>
           <ElementList>
             <br></br>
             <ElementListItem>
@@ -366,7 +498,9 @@ Add a new `VerticalTimelineElement` inside the `VerticalTimeline` component:
 ```
 
 #### Required Image Imports
+
 Add the following at the top of `index.js`:
+
 ```jsx
 import companyImage from "../../images/resume/company-image.jpg";
 ```
@@ -385,14 +519,19 @@ The component uses several styled components that can be customized in `ResumeEl
 ### 5.4. Component Dependencies
 
 Make sure these components are imported:
+
 ```jsx
 import { FaGraduationCap } from "react-icons/fa";
 import { MdWork } from "react-icons/md";
-import { VerticalTimeline, VerticalTimelineElement } from "react-vertical-timeline-component";
+import {
+  VerticalTimeline,
+  VerticalTimelineElement,
+} from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
 ```
 
 ### Best Practices
+
 1. Keep image sizes optimized for web
 2. Maintain consistent date formatting
 3. Ensure all links open in new tabs using `target="_blank"`
