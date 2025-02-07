@@ -196,14 +196,41 @@ const ResumeSection = ({ toggle }) => {
                               <strong> WHAT I DID:</strong>
                               <br></br>{" "}
                             </u>
-                            <strong>
-                              During my time at Ekline, I successfully
-                              streamlined production workflows, optimized
-                              supplier communication, and maintained rigorous
-                              quality control. I also managed relationships with
-                              international suppliers and handled large-scale
-                              orders effectively.
-                            </strong>
+                            <p>
+                              <li>
+                                During my time at Ekline, I successfully
+                                streamlined production workflows, optimized
+                                supplier communication, and maintained rigorous
+                                quality control. I also managed relationships
+                                with international suppliers and handled
+                                large-scale orders effectively.
+                              </li>
+                            </p>
+                            <br></br>
+
+                            <p style={{ color: "red" }}>
+                              <strong>ACHIEVEMENT</strong>
+                            </p>
+                            <p>
+                              <li>
+                                Improved production efficiency by 25% through
+                                implementing new workflow processes and supplier
+                                management strategies.
+                              </li>
+                            </p>
+                            <br></br>
+
+                            <p>
+                              <strong>BACKGROUND:</strong>
+                            </p>
+                            <p>
+                              <li>
+                                Collaborated with production teams to develop
+                                actionable solutions, enhancing overall
+                                operational performance and meeting client
+                                demands.
+                              </li>
+                            </p>
                             <ElementList>
                               <br></br>
                               <ElementListItem>
@@ -358,13 +385,37 @@ const ResumeSection = ({ toggle }) => {
                               <strong> WHAT I DID:</strong>
                               <br></br>{" "}
                             </u>
-                            <strong>
-                              As a Barista and Inventory Manager at the
-                              University of Washington, I optimized customer
-                              service processes, trained staff, and implemented
-                              strategies to reduce wait times and increase
-                              sales.
-                            </strong>{" "}
+                            <p>
+                              <li>
+                                As a Barista and Inventory Manager at the
+                                University of Washington, I optimized customer
+                                service processes, trained staff, and
+                                implemented strategies to reduce wait times and
+                                increase sales.
+                              </li>
+                            </p>{" "}
+                            <br></br>
+                            <p style={{ color: "red" }}>
+                              <strong>ACHIEVEMENT</strong>
+                            </p>
+                            <p>
+                              <li>
+                                Achieved a 20% reduction in customer wait times
+                                while increasing daily revenue by 10% through
+                                effective upselling techniques.
+                              </li>
+                            </p>
+                            <br></br>
+                            <p>
+                              <strong>BACKGROUND:</strong>
+                            </p>
+                            <p>
+                              <li>
+                                Enhanced team performance through targeted
+                                training sessions, leading to improved customer
+                                satisfaction and loyalty.
+                              </li>
+                            </p>
                             <ElementList>
                               <br></br>
                               <ElementListItem>
@@ -493,12 +544,33 @@ const ResumeSection = ({ toggle }) => {
                               <strong> WHAT I DID:</strong>
                               <br></br>{" "}
                             </u>
-                            <strong>
-                              At Vietclay, I developed and executed visual
-                              content strategies, collaborated with marketing
-                              teams, and improved the image processing workflow
-                              to enhance product presentation.
-                            </strong>{" "}
+                            <p>
+                              <li>
+                                At Vietclay, I developed and executed visual
+                                content strategies, collaborated with marketing
+                                teams, and improved the image processing
+                                workflow to enhance product presentation.
+                              </li>
+                            </p>{" "}
+                            <br></br>
+                            <p style={{ color: "red" }}>
+                              <strong>ACHIEVEMENT</strong>
+                            </p>
+                            <p>
+                              <li>
+                                Increased product sales by 50% through engaging
+                                visual campaigns and improved brand visibility.
+                              </li>
+                            </p>
+                            <br></br>
+                            <p>
+                              <strong>BACKGROUND:</strong>{" "}
+                              <li>
+                                Developed actionable marketing strategies that
+                                directly impacted sales performance, resulting
+                                in a significant boost in customer engagement.
+                              </li>
+                            </p>
                             <ElementList>
                               <br></br>
                               <ElementListItem>
@@ -631,13 +703,39 @@ const ResumeSection = ({ toggle }) => {
                               <strong> WHAT I DID:</strong>
                               <br></br>{" "}
                             </u>
-                            <strong>
-                              In my role at Bpi, I focused on optimizing supply
-                              chain processes, ensuring compliance with
-                              regulations, and enhancing documentation
-                              management to facilitate smoother customs
-                              clearance.
-                            </strong>{" "}
+                            <p>
+                              <li>
+                                In my role at Bpi, I focused on optimizing
+                                supply chain processes, ensuring compliance with
+                                regulations, and enhancing documentation
+                                management to facilitate smoother customs
+                                clearance.
+                              </li>
+                            </p>{" "}
+                            <br></br>
+                            <p style={{ color: "red" }}>
+                              <strong>ACHIEVEMENT</strong>
+                            </p>
+                            <p>
+                              <li>
+                                Streamlined customs clearance processes,
+                                achieving a 30% reduction in processing time for
+                                shipments.
+                              </li>
+                            </p>
+                            <br></br>
+                            <p>
+                              <strong>BACKGROUND:</strong>
+                            </p>
+                            <p>
+                              <li>
+                                {" "}
+                                Collaborated with cross-functional teams to
+                                improve supply chain efficiency, resulting in
+                                stronger supplier relationships and smoother
+                                operations.
+                              </li>
+                            </p>
                             <ElementList>
                               <br></br>
                               <ElementListItem>
