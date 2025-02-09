@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.60ac51b7.css",
-    "main.js": "/static/js/main.7a5f8da9.js",
+    "main.js": "/static/js/main.f9e5629d.js",
     "static/media/tien_thanh_bui.png": "/static/media/tien_thanh_bui.cc88d961d74747c9807f.png",
     "static/media/autumn3.jpg": "/static/media/autumn3.aed7e1c935fc5d9f9b6e.jpg",
     "static/media/autumn2.jpg": "/static/media/autumn2.60e6d7611111f14beb81.jpg",
@@ -31,10 +31,10 @@
     "static/media/foster-logo.jfif": "/static/media/foster-logo.471d0cd33ef845cc28f3.jfif",
     "index.html": "/index.html",
     "main.60ac51b7.css.map": "/static/css/main.60ac51b7.css.map",
-    "main.7a5f8da9.js.map": "/static/js/main.7a5f8da9.js.map"
+    "main.f9e5629d.js.map": "/static/js/main.f9e5629d.js.map"
   },
   "entrypoints": [
     "static/css/main.60ac51b7.css",
-    "static/js/main.7a5f8da9.js"
+    "static/js/main.f9e5629d.js"
   ]
 }
