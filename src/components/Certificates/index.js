@@ -37,9 +37,10 @@ import microsoftLogo from "../../images/certificates/microsoft-logo.png";
 // Certificate Card Component
 const CertificateCardComponent = memo(({ certificate, onClick }) => (
   <motion.div
-    whileHover={{ scale: 1.03 }}
+    whileHover={{ scale: 1.02 }}
     whileTap={{ scale: 0.98 }}
     transition={{ type: "spring", stiffness: 300 }}
+    style={{ width: "100%" }}
   >
     <CertificateCard
       onClick={onClick}
@@ -53,14 +54,17 @@ const CertificateCardComponent = memo(({ certificate, onClick }) => (
         loading="lazy"
       />
       <CertificateH2>
-        <Link
-          href={certificate.link}
-          target="_blank"
-          rel="noopener noreferrer"
-          onClick={(e) => e.stopPropagation()}
-        >
-          {certificate.organization} <ExternalLink size={16} />
-        </Link>
+        {certificate?.link && (
+          <Link
+            href={certificate.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {certificate.organization}
+            <ExternalLink size={16} />
+          </Link>
+        )}
       </CertificateH2>
       <CertificateP>{certificate.title}</CertificateP>
       {certificate.date && (

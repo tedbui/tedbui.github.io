@@ -1,129 +1,9 @@
 import styled, { keyframes } from "styled-components";
-
 const fadeInAnimation = keyframes`
   from { opacity: 0; }
   to { opacity: 1; }
 `;
-export const Link = styled.a`
-  color: black;
-  text-decoration: none;
 
-  &:hover {
-    color: #f6ae2d;
-    transition: 0.2s ease-out;
-  }
-`;
-
-export const CertificateContainer = styled.div`
-  height: 800px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background: white;
-
-  @media screen and (max-width: 768px) {
-    height: 1100px;
-  }
-
-  @media screen and (max-width: 480px) {
-    height: 1300px;
-  }
-`;
-export const CertificateWrapper = styled.div`
-  width: 100%;
-  max-width: 1400px;
-  margin: 0 auto;
-  display: grid;
-  grid-gap: 24px;
-  padding: 0 50px;
-  margin-bottom: 32px;
-
-  grid-template-columns: ${(props) => {
-    const childCount = props.childCount || 0;
-    if (childCount <= 3) {
-      return "repeat(3, 1fr)";
-    } else if (childCount === 4) {
-      return "repeat(4, 1fr)";
-    }
-    return "repeat(5, 1fr)";
-  }};
-
-  place-items: center;
-  place-content: center;
-
-  @media screen and (max-width: 1200px) {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  @media screen and (max-width: 900px) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  @media screen and (max-width: 768px) {
-    grid-template-columns: 1fr;
-    padding: 0 20px;
-  }
-`;
-
-export const BadgeContainer = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-top: 0.5rem;
-  justify-content: center;
-  width: 100%;
-  padding: 0 0.5rem;
-
-  @media screen and (max-width: 768px) {
-    gap: 0.25rem;
-    margin-top: 0.75rem;
-  }
-`;
-
-export const Badge = styled.span`
-  background: #f0f0f0;
-  padding: 0.25rem 0.75rem;
-  border-radius: 1rem;
-  font-size: 0.75rem;
-  color: #666;
-  white-space: nowrap;
-  display: inline-block;
-
-  @media screen and (max-width: 768px) {
-    font-size: 0.7rem;
-    padding: 0.2rem 0.5rem;
-    background: #f5f5f5;
-    border: 1px solid #eaeaea;
-  }
-`;
-
-export const CertificateCard = styled.div`
-  background: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  border-radius: 10px;
-  max-height: 340px;
-  padding: 30px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-  transition: all 0.2s ease-in-out;
-  width: 100%;
-  max-width: 300px;
-
-  &:hover {
-    transform: scale(1.02);
-    transition: all 0.2s ease-in-out;
-    cursor: pointer;
-  }
-
-  @media screen and (max-width: 768px) {
-    padding: 20px;
-    max-height: none;
-    min-height: 200px;
-  }
-`;
 export const CertificateIconWrapper = styled.div`
   width: 75%;
   display: flex;
@@ -131,39 +11,9 @@ export const CertificateIconWrapper = styled.div`
   background-color: red;
 `;
 
-export const CertificateIcon = styled.img`
-  height: 150px;
-  margin-bottom: 10px;
-
-  @media screen and (max-width: 768px) {
-    height: 80px;
-    width: 80px;
-  }
-`;
-
-export const CertificateH1 = styled.h1`
-  font-size: 2.5rem;
-  color: black;
-  margin-bottom: 64px;
-  padding-top: 50px;
-
-  @media screen and (max-width: 480px) {
-    font-size: 2rem;
-  }
-`;
 export const CertificateH6 = styled.h6`
   font-size: 1rem;
   margin-bottom: 10px;
-`;
-
-export const CertificateH2 = styled.h2`
-  font-size: 1rem;
-  margin-bottom: 10px;
-`;
-
-export const CertificateP = styled.p`
-  font-size: 1rem;
-  text-align: center;
 `;
 
 export const PopupContainer = styled.div`
@@ -341,14 +191,146 @@ export const MobileClose = styled.div`
     color: black;
   }
 `;
+
+export const Link = styled.a`
+  color: black;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+
+  &:hover {
+    color: #f6ae2d;
+    transition: 0.2s ease-out;
+  }
+`;
+
+export const CertificateContainer = styled.div`
+  min-height: 800px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: white;
+  padding: 2rem 1rem;
+
+  @media screen and (max-width: 768px) {
+    min-height: auto;
+    padding: 1.5rem 1rem;
+  }
+`;
+
+export const CertificateWrapper = styled.div`
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  padding: 0 1rem;
+
+  @media screen and (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 0 0.5rem;
+  }
+`;
+
+export const BadgeContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  justify-content: flex-start;
+  width: 100%;
+`;
+
+export const Badge = styled.span`
+  background: #f0f0f0;
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+  font-size: 0.875rem;
+  color: #666;
+  white-space: nowrap;
+
+  @media screen and (max-width: 768px) {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.5rem;
+  }
+`;
+
+export const CertificateCard = styled.div`
+  background: white;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  width: 100%;
+  height: 100%;
+  min-height: 280px;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  @media screen and (max-width: 768px) {
+    padding: 1.25rem;
+    min-height: 240px;
+  }
+`;
+
+export const CertificateIcon = styled.img`
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  margin-bottom: 1rem;
+
+  @media screen and (max-width: 768px) {
+    width: 60px;
+    height: 60px;
+  }
+`;
+
+export const CertificateH1 = styled.h1`
+  font-size: 2.5rem;
+  color: black;
+  margin-bottom: 3rem;
+  text-align: center;
+
+  @media screen and (max-width: 768px) {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+`;
+
+export const CertificateH2 = styled.h2`
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #333;
+`;
+
+export const CertificateP = styled.p`
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 1rem;
+  line-height: 1.4;
+`;
+
 export const CardDate = styled.div`
   display: flex;
   align-items: center;
   gap: 0.5rem;
   font-size: 0.875rem;
   color: #666;
-  margin-top: 0.5rem;
+  margin-top: auto;
 `;
+
+// Keep other components (PopupContainer, PopupCard, etc.) as they are
+// Only modifying the main certificate display components above
 export const LoadingSpinner = styled.div`
   border: 3px solid #f3f3f3;
   border-top: 3px solid #3498db;
