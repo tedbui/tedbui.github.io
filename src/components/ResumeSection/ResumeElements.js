@@ -191,7 +191,7 @@ export const SeeMoreButton = styled.button`
   position: absolute;
   bottom: 10px; /* Cách đáy 10px */
   right: 10px; /* Cách phải 10px */
-  background-color: #434343;
+  background-color: #222222;
   color: #fff;
   border: none;
   border-radius: 4px;

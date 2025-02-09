@@ -15,7 +15,7 @@ export const ProjectsContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: #434343;
+  background: #222222;
 
   @media screen and (max-width: 768px) {
     height: 1100px;
@@ -133,28 +133,11 @@ export const PopupContainer = styled.div`
   background-color: rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
+  overflow-y: auto;
   align-items: center;
   opacity: 0;
   animation: ${fadeInAnimation} 0.3s ease-in-out forwards;
   z-index: 100;
-`;
-
-export const PopupCard = styled.div`
-  background: #f0f0f0;
-  border-radius: 10px;
-  padding: 30px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-  width: 70%;
-  height: 55%;
-  z-index: 200;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-
-  @media screen and (max-width: 768px) {
-    width: 90%;
-    height: 90%;
-  }
 `;
 
 export const PopupHeader = styled.div`
@@ -186,21 +169,73 @@ export const PopupSubtitle = styled.h4`
   }
 `;
 
+// Add these new styled components to your ProjectsElements.js file
+
+export const ContentSection = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 2rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+`;
+
+export const Description = styled.p`
+  text-align: center;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  max-width: 800px;
+  width: 100%;
+  padding: 0 1rem;
+`;
+
+export const ImagesGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 1rem;
+`;
+
+// Update these existing components
 export const PopupContent = styled.div`
   display: flex;
-  justify-content: space-between;
-  height: 90%;
+  flex-direction: column;
+  align-items: center;
+  height: calc(100% - 80px);
+  overflow-y: auto;
+  padding: 1rem;
+`;
 
-  @media screen and (max-width: 768px) {
-    flex-direction: column;
-    justify-content: flex-start;
-  }
+export const PopupImagePreview = styled.img`
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+`;
+
+export const PopupCard = styled.div`
+  background: #f0f0f0;
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  max-width: 1200px;
+  max-height: 90vh;
+  z-index: 200;
+  display: flex;
+  flex-direction: column;
 `;
 
 export const PopupDescription = styled.p`
   font-size: 1rem;
   line-height: 1.5;
-  width: 50%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -221,16 +256,6 @@ export const PopupVideo = styled.iframe`
     width: 100%;
     height: 100%;
     margin-top: 20px;
-  }
-`;
-export const PopupImagePreview = styled.img`
-  width: auto;
-  height: 90%;
-
-  @media screen and (max-width: 700px) {
-    width: 100%;
-    height: auto;
-    margin-top: 10px;
   }
 `;
 

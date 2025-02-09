@@ -10,7 +10,6 @@ import {
   PopupContainer,
   PopupCard,
   PopupTitle,
-  PopupDescription,
   CloseButton,
   PopupHeader,
   PopupContent,
@@ -19,47 +18,70 @@ import {
   PopupSubtitle,
   MobileClose,
   CloseText,
+  ContentSection,
+  Description,
+  ImagesGrid,
 } from "./ProjectsElements";
-import cebonPerfume from "../../images/projects/cebonPerfume.png";
+
 import cebonPerfumeIcon from "../../images/projects/cebonPerfumeIcon.png";
 import hanoiMidAutumn from "../../images/projects/hanoiMidAutumn.jpg";
 import hanoiMidAutumnIcon from "../../images/projects/hanoiMidAutumnIcon.jpg";
 import muongLat from "../../images/projects/muongLat.jfif";
 import muongLatIcon from "../../images/projects/muongLatIcon.jfif";
+
+// C'ebon Perfume images
+import cebonPerfume from "../../images/projects/cebonPerfume.png";
+import supplyChain from "../../images/projects/supplyChain.jpeg";
+
 const Projects = () => {
   const [selectedProjectIndex, setSelectedProjectIndex] = useState(null);
   const [showPopup, setShowPopup] = useState(false);
 
   const projects = [
     {
-      image: cebonPerfumeIcon,
+      icon: cebonPerfumeIcon,
       title: "C'ebon Perfume",
       date: "May 2020",
-      fullDescription: `C'ebon Perfume began as a passion project, 
-      with my bedroom serving as the first "warehouse" for all my fragrance bottles!
-      What started as a small collection quickly turned into an opportunity to share my love for perfume with others. 
-      Along the way, I discovered the ins and outs of the supply chain—learning how to get the right scent into the hands of the right people. 
-      C’ebon is where my passion for fragrance meets the challenges of business, and I wouldn’t have it any other way!`,
-      imagePreview: cebonPerfume,
+      sections: [
+        {
+          text: "C'ebon Perfume began as a passion project, with my bedroom serving as the first 'warehouse' for all my fragrance bottles! What started as a small collection quickly turned into an opportunity to share my love for perfume with others.",
+          images: [cebonPerfume],
+        },
+        {
+          text: "Along the way, I discovered the ins and outs of the supply chain—learning how to get the right scent into the hands of the right people.",
+          images: [supplyChain],
+        },
+      ],
     },
     {
-      image: hanoiMidAutumn,
+      icon: hanoiMidAutumnIcon,
       title: "A Hanoi Mid-Autumn Story",
       date: "Jun 2022",
-      fullDescription: `I'm pleased to share that one of my photography projects, 
-      which documents the Mid-Autumn Festival in Hanoi, 
-      has garnered significant attention, achieving 6,500 likes on Facebook.
-      This project reflects my passion for capturing cultural moments and utilizing visual storytelling to connect with audiences.`,
-      imagePreview: hanoiMidAutumnIcon,
+      sections: [
+        {
+          text: "I'm pleased to share that one of my photography projects, which documents the Mid-Autumn Festival in Hanoi, has garnered significant attention, achieving 6,500 likes on Facebook.",
+          images: [hanoiMidAutumn],
+        },
+        {
+          text: "This project reflects my passion for capturing cultural moments and utilizing visual storytelling to connect with audiences.",
+          images: [hanoiMidAutumnIcon],
+        },
+      ],
     },
     {
-      image: muongLatIcon,
+      icon: muongLatIcon,
       title: "Muong Lat",
       date: "May 2022",
-      fullDescription: `This experience was incredibly humbling. 
-      I had the privilege of guiding 20 university students as we rebuilt Pha Den Primary School in Muong Lat, Vietnam.
-      Thanks to the support of 50+ donors, we were able to create a brighter future for these amazing kids.`,
-      imagePreview: muongLat,
+      sections: [
+        {
+          text: "This experience was incredibly humbling. I had the privilege of guiding 20 university students as we rebuilt Pha Den Primary School in Muong Lat, Vietnam.",
+          images: [muongLat],
+        },
+        {
+          text: "Thanks to the support of 50+ donors, we were able to create a brighter future for these amazing kids.",
+          images: [muongLatIcon],
+        },
+      ],
     },
   ];
 
@@ -81,11 +103,12 @@ const Projects = () => {
       <ProjectsWrapper childCount={projects.length}>
         {projects.map((project, index) => (
           <ProjectsCard key={index} onClick={() => openPopup(index)}>
-            <ProjectsIcon src={project.image} />
+            <ProjectsIcon src={project.icon} />
             <ProjectsH2>{project.title}</ProjectsH2>
           </ProjectsCard>
         ))}
       </ProjectsWrapper>
+
       {showPopup && (
         <PopupContainer visible={showPopup} onClick={closePopup}>
           <PopupCard onClick={(e) => e.stopPropagation()}>
@@ -103,13 +126,24 @@ const Projects = () => {
                 </MobileClose>
               </CloseButton>
             </PopupHeader>
+
             <PopupContent>
-              <PopupDescription>
-                {projects[selectedProjectIndex].fullDescription}
-              </PopupDescription>
-              <PopupImagePreview
-                src={projects[selectedProjectIndex].imagePreview}
-              ></PopupImagePreview>
+              {projects[selectedProjectIndex].sections.map((section, index) => (
+                <ContentSection key={index}>
+                  <Description>{section.text}</Description>
+                  <ImagesGrid>
+                    {section.images.map((image, imgIndex) => (
+                      <PopupImagePreview
+                        key={imgIndex}
+                        src={image}
+                        alt={`${projects[selectedProjectIndex].title} ${
+                          imgIndex + 1
+                        }`}
+                      />
+                    ))}
+                  </ImagesGrid>
+                </ContentSection>
+              ))}
             </PopupContent>
           </PopupCard>
         </PopupContainer>

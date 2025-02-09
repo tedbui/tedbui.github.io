@@ -15,7 +15,7 @@ export const ExtracurricularContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: #434343;
+  background: #222222;
 
   @media screen and (max-width: 768px) {
     height: 1100px;
