@@ -1,8 +1,9 @@
 {
   "files": {
     "main.css": "/static/css/main.60ac51b7.css",
-    "main.js": "/static/js/main.0b8b5618.js",
+    "main.js": "/static/js/main.87f9bc36.js",
     "static/media/DSC_5050.jpg": "/static/media/DSC_5050.16606e304c7712a70bbf.jpg",
+    "static/media/ekline.png": "/static/media/ekline.a5db9bd5d282c2a8c897.png",
     "static/media/tien_thanh_bui.png": "/static/media/tien_thanh_bui.cc88d961d74747c9807f.png",
     "static/media/autumn3.jpg": "/static/media/autumn3.aed7e1c935fc5d9f9b6e.jpg",
     "static/media/autumn2.jpg": "/static/media/autumn2.60e6d7611111f14beb81.jpg",
@@ -11,7 +12,6 @@
     "static/media/hanoiMidAutumn.jpg": "/static/media/hanoiMidAutumn.f2cd73bb4279edda1eb2.jpg",
     "static/media/autumn4.jpg": "/static/media/autumn4.a011b20a2da8892ddefb.jpg",
     "static/media/autumn1.jpg": "/static/media/autumn1.a78c7c967a9ba172684e.jpg",
-    "static/media/ekline.png": "/static/media/ekline.5504bf0ccc332dd6a348.png",
     "static/media/autumn5.jpg": "/static/media/autumn5.91fcba245ef387011cb4.jpg",
     "static/media/cebon1.jpg": "/static/media/cebon1.9670a87744fb9b7c9f2a.jpg",
     "static/media/muonglat4.jfif": "/static/media/muonglat4.953a02cfb5c162cbf3ec.jfif",
@@ -33,10 +33,10 @@
     "static/media/foster-logo.jfif": "/static/media/foster-logo.471d0cd33ef845cc28f3.jfif",
     "index.html": "/index.html",
     "main.60ac51b7.css.map": "/static/css/main.60ac51b7.css.map",
-    "main.0b8b5618.js.map": "/static/js/main.0b8b5618.js.map"
+    "main.87f9bc36.js.map": "/static/js/main.87f9bc36.js.map"
   },
   "entrypoints": [
     "static/css/main.60ac51b7.css",
-    "static/js/main.0b8b5618.js"
+    "static/js/main.87f9bc36.js"
   ]
 }
