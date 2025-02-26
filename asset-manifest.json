@@ -1,10 +1,10 @@
 {
   "files": {
     "main.css": "/static/css/main.60ac51b7.css",
-    "main.js": "/static/js/main.87f9bc36.js",
+    "main.js": "/static/js/main.59ce8618.js",
     "static/media/DSC_5050.jpg": "/static/media/DSC_5050.16606e304c7712a70bbf.jpg",
+    "static/media/tien_thanh_bui.png": "/static/media/tien_thanh_bui.b606ba8ec5df671daf1d.png",
     "static/media/ekline.png": "/static/media/ekline.a5db9bd5d282c2a8c897.png",
-    "static/media/tien_thanh_bui.png": "/static/media/tien_thanh_bui.cc88d961d74747c9807f.png",
     "static/media/autumn3.jpg": "/static/media/autumn3.aed7e1c935fc5d9f9b6e.jpg",
     "static/media/autumn2.jpg": "/static/media/autumn2.60e6d7611111f14beb81.jpg",
     "static/media/cebon2.jpg": "/static/media/cebon2.8075a526b4f68452a342.jpg",
@@ -33,10 +33,10 @@
     "static/media/foster-logo.jfif": "/static/media/foster-logo.471d0cd33ef845cc28f3.jfif",
     "index.html": "/index.html",
     "main.60ac51b7.css.map": "/static/css/main.60ac51b7.css.map",
-    "main.87f9bc36.js.map": "/static/js/main.87f9bc36.js.map"
+    "main.59ce8618.js.map": "/static/js/main.59ce8618.js.map"
   },
   "entrypoints": [
     "static/css/main.60ac51b7.css",
-    "static/js/main.87f9bc36.js"
+    "static/js/main.59ce8618.js"
   ]
 }
