@@ -1,7 +1,8 @@
 {
   "files": {
     "main.css": "/static/css/main.60ac51b7.css",
-    "main.js": "/static/js/main.59ce8618.js",
+    "main.js": "/static/js/main.6cfe811c.js",
+    "static/media/cebonPerfumeIcon.png": "/static/media/cebonPerfumeIcon.d7eb18ba69438ca90ead.png",
     "static/media/DSC_5050.jpg": "/static/media/DSC_5050.16606e304c7712a70bbf.jpg",
     "static/media/tien_thanh_bui.png": "/static/media/tien_thanh_bui.b606ba8ec5df671daf1d.png",
     "static/media/ekline.png": "/static/media/ekline.a5db9bd5d282c2a8c897.png",
@@ -26,17 +27,16 @@
     "static/media/bpi.jpg": "/static/media/bpi.d21d994b48a5283f431f.jpg",
     "static/media/microsoft-logo.png": "/static/media/microsoft-logo.85579c8b23551498bea7.png",
     "static/media/vietclay.jpg": "/static/media/vietclay.674d6e81410688ba9868.jpg",
-    "static/media/cebonPerfumeIcon.png": "/static/media/cebonPerfumeIcon.997e6736310437bef954.png",
     "static/media/golf.svg": "/static/media/golf.d49f1a97416f9118889be87ccdd22532.svg",
     "static/media/google-logo.png": "/static/media/google-logo.1260e96dae1ddd9efca5.png",
     "static/media/tedLogo.png": "/static/media/tedLogo.0b3888fa2e6b2253a9ba.png",
     "static/media/foster-logo.jfif": "/static/media/foster-logo.471d0cd33ef845cc28f3.jfif",
     "index.html": "/index.html",
     "main.60ac51b7.css.map": "/static/css/main.60ac51b7.css.map",
-    "main.59ce8618.js.map": "/static/js/main.59ce8618.js.map"
+    "main.6cfe811c.js.map": "/static/js/main.6cfe811c.js.map"
   },
   "entrypoints": [
     "static/css/main.60ac51b7.css",
-    "static/js/main.59ce8618.js"
+    "static/js/main.6cfe811c.js"
   ]
 }
